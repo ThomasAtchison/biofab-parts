@@ -55,11 +55,12 @@ Thumbs.db
 *.war
 *.pyc
 
-# SVN Folders #
-###############
-.svn/
 
 # Folders to Ignore #
 #################
 build/
 dist/
+
+# Visual Studio Code #
+#################
+.vscode

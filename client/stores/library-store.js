@@ -9,8 +9,9 @@ LibraryStore = Ext.extend(Ext.data.JsonStore, {
         cfg = cfg || {};
         LibraryStore.superclass.constructor.call(this, Ext.apply({
             storeId: 'libraryStore',
-            url: 'data/library.json',
+            url: WEB_SERVICE_BASE_URL + 'library.json',
             autoLoad: true,
+            model: 'Library',
             fields: [
                 {
                     name: 'id',

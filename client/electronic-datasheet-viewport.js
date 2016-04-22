@@ -10,7 +10,7 @@ Ext.define('ElectronicDatasheetViewport', {
     layout: 'border',
     performanceStore: null,
     parts: null,
-    collectionsGridPanel: null,
+    libraryGridPanel: null,
     promoterGridPanel: null,
     terminatorGridPanel: null,
     infoTabPanel: null,
@@ -72,22 +72,6 @@ Ext.define('ElectronicDatasheetViewport', {
                         minColumnWidth: 60,
                         id: 'libraryGridPanel',
                         columns: [
-                            // {
-                            //     xtype: 'gridcolumn',
-                            //     dataIndex: 'biofabID',
-                            //     header: 'Identifier',
-                            //     sortable: true,
-                            //     width: 60,
-                            //     editable: false
-                            // },
-                            // {
-                            //     xtype: 'gridcolumn',
-                            //     dataIndex: 'chassis',
-                            //     header: 'Chassis',
-                            //     sortable: true,
-                            //     width: 60,
-                            //     editable: false
-                            // },
                             {
                                 xtype: 'gridcolumn',
                                 dataIndex: 'name',
@@ -104,14 +88,6 @@ Ext.define('ElectronicDatasheetViewport', {
                                 width: 60,
                                 dataIndex: 'version'
                             },
-                            // {
-                            //     xtype: 'gridcolumn',
-                            //     header: 'Release Status',
-                            //     sortable: true,
-                            //     editable: false,
-                            //     width: 100,
-                            //     dataIndex: 'releaseStatus'
-                            // },
                             {
                                 xtype: 'gridcolumn',
                                 header: 'Release Date',
@@ -123,11 +99,11 @@ Ext.define('ElectronicDatasheetViewport', {
                         ],
                         tbar: {
                             xtype: 'toolbar',
-                            id: 'collectionsToolbar',
+                            id: 'libraryToolbar',
                             items: [
                                 {
                                     xtype: 'tbtext',
-                                    html: '<b>Collections</b>'
+                                    html: '<b>Libraries</b>'
                                 },
                                 {
                                     xtype: 'tbfill'
@@ -136,7 +112,7 @@ Ext.define('ElectronicDatasheetViewport', {
                                     xtype: 'button',
                                     text: 'Export',
                                     tooltip: 'Export collection information in JSON format.',
-                                    id: 'collectionsGridExportButton'
+                                    id: 'libraryGridExportButton'
                                 }
                             ]
                         }
@@ -245,8 +221,8 @@ Ext.define('ElectronicDatasheetViewport', {
                             },
                             {
                                 xtype: 'panel',
-                                title: '5\' UTRs',
-                                html: '<b>5\' UTRs will be available in an upcoming release of the Data Access Client</b>'
+                                title: 'Translation Initiation Elements',
+                                html: '<b>The translation initiation elements will be listed in an upcoming release.</b>'
                             },
                             {
                                 xtype: 'gridpanel',
@@ -327,26 +303,26 @@ Ext.define('ElectronicDatasheetViewport', {
         
         this.callParent();
 
-        this.collectionsGridPanel = Ext.ComponentManager.get('collectionsGridPanel');
-        var collectionsGridSelectionModel = this.collectionsGridPanel.getSelectionModel();
-	collectionsGridSelectionModel.on('rowselect', this.collectionsGridRowSelectHandler, this);
+        this.libraryGridPanel = Ext.ComponentManager.get('libraryGridPanel');
+        var libraryGridSelectionModel = this.libraryGridPanel.getSelectionModel();
+        libraryGridSelectionModel.on('rowselect', this.libraryGridRowSelectHandler, this);
        
-	this.promoterGridPanel = Ext.ComponentManager.get('promoterGridPanel');
+	    this.promoterGridPanel = Ext.ComponentManager.get('promoterGridPanel');
         var promoterGridSelectionModel = this.promoterGridPanel.getSelectionModel();
-	promoterGridSelectionModel.on('rowselect', this.promoterGridRowSelectHandler, this);
-        
+	    promoterGridSelectionModel.on('rowselect', this.promoterGridRowSelectHandler, this);
+            
         this.terminatorGridPanel = Ext.ComponentManager.get('terminatorGridPanel');
         var terminatorGridSelectionModel = this.terminatorGridPanel.getSelectionModel();
-	terminatorGridSelectionModel.on('rowselect', this.terminatorGridRowSelectHandler, this);
+	    terminatorGridSelectionModel.on('rowselect', this.terminatorGridRowSelectHandler, this);
         
         this.partsToolbarText = Ext.ComponentManager.get('partsToolbarText');
 
-        var collectionsGridExportButton = Ext.ComponentManager.get('collectionsGridExportButton'); 
-        collectionsGridExportButton.setHandler(this.collectionsGridExportButtonClickHandler, this);
+        var libraryGridExportButton = Ext.ComponentManager.get('libraryGridExportButton'); 
+        libraryGridExportButton.setHandler(this.libraryGridExportButtonClickHandler, this);
         
         this.infoTabPanel = Ext.ComponentManager.get('infoTabPanel');
         
-        this.fetchParts();
+        // this.fetchParts();
     },
     
  /**********************
@@ -369,13 +345,13 @@ Ext.define('ElectronicDatasheetViewport', {
             });
         },
         
-        fetchCollections:function()
+        fetchlibrary:function()
         {
             Ext.Ajax.request({
-                       url: WEB_SERVICE_BASE_URL + 'collections?format=json',
+                       url: WEB_SERVICE_BASE_URL + 'library.json',
                        method: "GET",
-                       success: this.fetchCollectionsResultHandler,
-                       failure: this.fetchCollectionsErrorHandler,
+                       success: this.fetchlibraryResultHandler,
+                       failure: this.fetchlibraryErrorHandler,
                        scope: this
             });
         },
@@ -385,18 +361,18 @@ Ext.define('ElectronicDatasheetViewport', {
             var id = collectionRecord.get('id');
             var panel;
 
-            if(id === 1)
-            {
-                panel = Ext.ComponentManager.get('pilotProjectPanel');
+            // if(id === 1)
+            // {
+            //     panel = Ext.ComponentManager.get('pilotProjectPanel');
                 
-                if(panel === undefined)
-                {
-                    panel = new PilotProjectPanel();
-                    this.infoTabPanel.add(panel);
-                }
-            }
+            //     if(panel === undefined)
+            //     {
+            //         panel = new PilotProjectPanel();
+            //         this.infoTabPanel.add(panel);
+            //     }
+            // }
 
-            if(id === 2)
+            if(id === 1)
             {
                 panel = Ext.ComponentManager.get('modularPromoterLibraryPanel');
                 
@@ -528,7 +504,7 @@ Ext.define('ElectronicDatasheetViewport', {
     //
     //******************
 
-    collectionsGridRowSelectHandler: function(selectModel, rowIndex, record)
+    libraryGridRowSelectHandler: function(selectModel, rowIndex, record)
     {
         var id = record.get('id');
         var promoterStore = this.promoterGridPanel.getStore();
@@ -655,9 +631,9 @@ Ext.define('ElectronicDatasheetViewport', {
 //            }
 //	},
 
-        collectionsGridExportButtonClickHandler: function(button, event)
+        libraryGridExportButtonClickHandler: function(button, event)
         {
-            var exportWindow = window.open(WEB_SERVICE_BASE_URL + 'collections?format=json',"Collections","width=640,height=480");
+            var exportWindow = window.open(WEB_SERVICE_BASE_URL + 'library?format=json',"library","width=640,height=480");
             exportWindow.scrollbars.visible = true;
             exportWindow.alert("Use File/Save As in the menu bar to save this document.");
         },
@@ -707,11 +683,11 @@ Ext.define('ElectronicDatasheetViewport', {
 //            this.constructsLabel.setText('Constructs');
 //        },
 
-        fetchCollectionsResultHandler: function(response, opts)
+        fetchlibraryResultHandler: function(response, opts)
         {
-            var collections = Ext.JSON.decode(response.responseText, true);
-            var store = Ext.data.StoreManager.lookup('collectionStore');
-            store.loadData(collections, false);
+            var library = Ext.JSON.decode(response.responseText, true);
+            var store = Ext.data.StoreManager.lookup('librarytore');
+            store.loadData(library, false);
 
             // Temporary
             var index = store.find('id', '1', 0, false, false, true);
@@ -721,9 +697,9 @@ Ext.define('ElectronicDatasheetViewport', {
             this.showCollectionPanel(collectionRecord);
         },
         
-        fetchCollectionsErrorHandler: function(response, opts)
+        fetchlibraryErrorHandler: function(response, opts)
         {
-            Ext.Msg.alert('Fetch Collections', 'There was an error while attempting to fetch the collections. Please reload the Data Access Client.\n' + 'Error: ' + response.responseText);
+            Ext.Msg.alert('Fetch library', 'There was an error while attempting to fetch the library. Please reload the Data Access Client.\n' + 'Error: ' + response.responseText);
         },
 
         //TODO Refactor!!!
@@ -813,7 +789,7 @@ Ext.define('ElectronicDatasheetViewport', {
                 
                 this.promoterGridPanel.getStore().loadData(partsForStore, false);
                 this.terminatorGridPanel.getStore().loadData(terminators, false);
-                this.fetchCollections();
+                this.fetchlibrary();
             }
             else
             {

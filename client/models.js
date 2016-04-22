@@ -1,3 +1,14 @@
+Ext.define('Library', {
+    extend: 'Ext.data.Model',
+    fields: [
+        {name: 'id', type: 'int'},
+        {name: 'name', type: 'string'},
+        {name: 'description', type: 'string'},
+        {name: 'version', type: 'string'},
+        {name: 'release-date',type: 'string'}
+    ]
+});
+
 Ext.define('Promoter', {
     extend: 'Ext.data.Model',
     fields: [

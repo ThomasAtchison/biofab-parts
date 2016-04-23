@@ -20,37 +20,37 @@ Ext.define('ElectronicDatasheetViewport', {
     {
         //  Stores
         
-        var promoterStore = new Ext.data.Store({
-            model: 'Promoter',
-            proxy: {
-                type: 'ajax',
-                url : '',
-                reader: {type: 'json'}
-            },
-            sorters: [
-                {
-                    property : 'meanFluorescencePerCell',
-                    direction: 'DESC'
-                }
-            ],
-            autoLoad: false
-        });
+        // var promoterStore = new Ext.data.Store({
+        //     model: 'Promoter',
+        //     proxy: {
+        //         type: 'ajax',
+        //         url : '',
+        //         reader: {type: 'json'}
+        //     },
+        //     sorters: [
+        //         {
+        //             property : 'meanFluorescencePerCell',
+        //             direction: 'DESC'
+        //         }
+        //     ],
+        //     autoLoad: false
+        // });
         
-        var terminatorStore = new Ext.data.Store({
-            model: 'Terminator',
-            proxy: {
-                type: 'ajax',
-                url : '',
-                reader: {type: 'json'}
-            },
-            sorters:[
-                {
-                    property : 'terminationEfficiency',
-                    direction: 'DESC'
-                }
-            ],
-            autoLoad: false
-        });
+        // var terminatorStore = new Ext.data.Store({
+        //     model: 'Terminator',
+        //     proxy: {
+        //         type: 'ajax',
+        //         url : '',
+        //         reader: {type: 'json'}
+        //     },
+        //     sorters:[
+        //         {
+        //             property : 'terminationEfficiency',
+        //             direction: 'DESC'
+        //         }
+        //     ],
+        //     autoLoad: false
+        // });
         
         this.items = [
             {
@@ -68,7 +68,7 @@ Ext.define('ElectronicDatasheetViewport', {
                         region: 'north',
                         split: true,
                         height: 175,
-                        //autoExpandColumn: 5,
+                        // autoExpandColumn: 1,
                         minColumnWidth: 60,
                         id: 'libraryGridPanel',
                         columns: [
@@ -77,7 +77,7 @@ Ext.define('ElectronicDatasheetViewport', {
                                 dataIndex: 'name',
                                 header: 'Name',
                                 sortable: true,
-                                width: 150,
+                                width: 280,
                                 editable: false
                             },
                             {
@@ -85,7 +85,7 @@ Ext.define('ElectronicDatasheetViewport', {
                                 header: 'Version',
                                 sortable: true,
                                 editable: false,
-                                width: 60,
+                                width: 100,
                                 dataIndex: 'version'
                             },
                             {
@@ -93,7 +93,7 @@ Ext.define('ElectronicDatasheetViewport', {
                                 header: 'Release Date',
                                 sortable: true,
                                 editable: false,
-                                width: 100,
+                                width: 120,
                                 dataIndex: 'release-date'
                             }
                         ],
@@ -118,7 +118,7 @@ Ext.define('ElectronicDatasheetViewport', {
                         }
                     },
                     {
-                        xtype: 'tabpanel',
+                        xtype: 'panel',
                         activeTab: 0,
                         region: 'center',
                         split: true,
@@ -132,18 +132,18 @@ Ext.define('ElectronicDatasheetViewport', {
                                     xtype: 'tbtext',
                                     id: "partsToolbarText",
                                     style: {fontWeight:'bold'},
-                                    text: 'Parts'
+                                    text: 'Genetic Parts'
                                 },
                                 {
                                     xtype: 'tbfill'
                                 },
-                                {
-                                    xtype: 'button',
-                                    text: 'Show All',
-                                    tooltip: 'Show all the parts',
-                                    id: 'showAllPartsButton',
-                                    handler: this.showAllPartsButtonHandler
-                                },
+                                // {
+                                //     xtype: 'button',
+                                //     text: 'Show All',
+                                //     tooltip: 'Show all the parts',
+                                //     id: 'showAllPartsButton',
+                                //     handler: this.showAllPartsButtonHandler
+                                // },
                                 {
                                     xtype: 'tbseparator'
                                 },
@@ -160,47 +160,22 @@ Ext.define('ElectronicDatasheetViewport', {
                             {
                                 xtype: 'gridpanel',
                                 id: 'promoterGridPanel',
-                                title: 'Promoters',
+                                title: '',
                                 store: promoterStore, 
                                 columnLines: true,
                                 columns: [
                                     {
                                         xtype: 'gridcolumn',
                                         dataIndex: 'displayId',
-                                        header: 'Part',
+                                        header: 'Name',
                                         sortable: true,
                                         width: 80,
                                         editable: false
                                     },
                                     {
-                                        xtype: 'gridcolumn',
-                                        dataIndex: 'constructId',
-                                        header: 'Construct',
-                                        sortable: true,
-                                        width: 100,
-                                        editable: false
-                                    },
-//                                    {
-//                                        xtype: 'gridcolumn',
-//                                        dataIndex: 'type',
-//                                        header: 'Part Type',
-//                                        sortable: true,
-//                                        width: 100,
-//                                        editable: false
-//
-//                                    },
-                                    {
-                                        xtype: 'gridcolumn',
-                                        dataIndex: 'description',
-                                        header: 'Description',
-                                        sortable: true,
-                                        width: 175,
-                                        editable: false
-                                    },
-                                    {
                                         xtype: 'numbercolumn',
                                         dataIndex: 'meanFluorescencePerCell',
-                                        header: 'Mean Fluorescence per Cell',
+                                        header: 'Performance',
                                         sortable: true,
                                         width: 150,
                                         align: 'left',
@@ -221,13 +196,15 @@ Ext.define('ElectronicDatasheetViewport', {
                             },
                             {
                                 xtype: 'panel',
-                                title: 'Translation Initiation Elements',
+                                title: '',
+                                hidden: true,
                                 html: '<b>The translation initiation elements will be listed in an upcoming release.</b>'
                             },
                             {
                                 xtype: 'gridpanel',
                                 id: 'terminatorGridPanel',
-                                title: 'Terminators',
+                                title: '',
+                                hidden: true,
                                 store: terminatorStore, 
                                 columnLines: true,
                                 //stripeRows: true,
@@ -322,7 +299,7 @@ Ext.define('ElectronicDatasheetViewport', {
         
         this.infoTabPanel = Ext.ComponentManager.get('infoTabPanel');
         
-        // this.fetchParts();
+        // libraryGridSelectionModel.select(0);
     },
     
  /**********************
@@ -529,7 +506,7 @@ Ext.define('ElectronicDatasheetViewport', {
         }]);
 
         var collectionName = record.get('name');
-        this.partsToolbarText.setText(collectionName + ' Parts');
+        this.partsToolbarText.setText(collectionName);
         this.showCollectionPanel(record);
     },
     

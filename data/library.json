@@ -1,11 +1,32 @@
 {
-"RECORDS":[
-{
-    "id":"1",
-    "name":"Modular Promoter Library",
-    "description":"Description",
-    "version":"0.1.0",
-    "release-date":""
-}
-]
+    "libraries":[
+        {
+            "id":"1",
+            "name":"Modular Promoter Library", 
+            "description":"Description", 
+            "version":"0.1.0",
+            "release-date":""
+        },
+        {
+            "id":"2",
+            "name":"Random Promoter Library", 
+            "description":"Description", 
+            "version":"0.1.0",
+            "release-date":""
+        },
+        {
+            "id":"3",
+            "name":"Translation Initiation Elements Library", 
+            "description":"Description", 
+            "version":"0.1.0",
+            "release-date":""
+        },
+        {
+            "id":"4",
+            "name":"Terminator Library", 
+            "description":"Description", 
+            "version":"0.1.0",
+            "release-date":""
+        }
+    ]
 }

@@ -6,11 +6,11 @@
 
 var libraryStore = new Ext.data.JsonStore({
     storeId: 'libraryStore',
-    autoLoad: true,
     model: 'Library',
+    autoLoad: true,
     proxy: {
         type: 'ajax',
-        url: WEB_SERVICE_BASE_URL + 'library.json',
+        url: WEB_SERVICE_BASE_URL + 'libraries.json',
         reader: {
             type: 'json',
             root: 'libraries',
@@ -20,19 +20,24 @@ var libraryStore = new Ext.data.JsonStore({
 });
 
 var promoterStore = new Ext.data.Store({
+    storeId: 'promoterStore',
     model: 'Promoter',
+    autoLoad: true,
     proxy: {
         type: 'ajax',
-        url : '',
-        reader: {type: 'json'}
+        url : WEB_SERVICE_BASE_URL + 'promoters.json',
+        reader: {
+            type: 'json',
+            root: 'promoters',
+            idProperty: 'id'
+        }
     },
     sorters: [
         {
-            property : 'meanFluorescencePerCell',
+            property : 'mean-fluorescence-per-cell',
             direction: 'DESC'
         }
-    ],
-    autoLoad: false
+    ]
 });
         
 var terminatorStore = new Ext.data.Store({

@@ -17,41 +17,7 @@ Ext.define('ElectronicDatasheetViewport', {
     partsToolbarText: null,
 	
     constructor: function()
-    {
-        //  Stores
-        
-        // var promoterStore = new Ext.data.Store({
-        //     model: 'Promoter',
-        //     proxy: {
-        //         type: 'ajax',
-        //         url : '',
-        //         reader: {type: 'json'}
-        //     },
-        //     sorters: [
-        //         {
-        //             property : 'meanFluorescencePerCell',
-        //             direction: 'DESC'
-        //         }
-        //     ],
-        //     autoLoad: false
-        // });
-        
-        // var terminatorStore = new Ext.data.Store({
-        //     model: 'Terminator',
-        //     proxy: {
-        //         type: 'ajax',
-        //         url : '',
-        //         reader: {type: 'json'}
-        //     },
-        //     sorters:[
-        //         {
-        //             property : 'terminationEfficiency',
-        //             direction: 'DESC'
-        //         }
-        //     ],
-        //     autoLoad: false
-        // });
-        
+    {   
         this.items = [
             {
                 xtype: 'panel',
@@ -64,13 +30,14 @@ Ext.define('ElectronicDatasheetViewport', {
                 items: [
                     {
                         xtype: 'grid',
+                        id: 'libraryGridPanel',
                         store: 'libraryStore',
                         region: 'north',
                         split: true,
                         height: 175,
                         // autoExpandColumn: 1,
                         minColumnWidth: 60,
-                        id: 'libraryGridPanel',
+                        activeItem: 0,
                         columns: [
                             {
                                 xtype: 'gridcolumn',
@@ -111,7 +78,7 @@ Ext.define('ElectronicDatasheetViewport', {
                                 {
                                     xtype: 'button',
                                     text: 'Export',
-                                    tooltip: 'Export collection information in JSON format.',
+                                    tooltip: 'Export library information in JSON format.',
                                     id: 'libraryGridExportButton'
                                 }
                             ]
@@ -119,11 +86,11 @@ Ext.define('ElectronicDatasheetViewport', {
                     },
                     {
                         xtype: 'panel',
-                        activeTab: 0,
+                        id: 'partsTabPanel',
+                        autoScroll: true,
                         region: 'center',
                         split: true,
                         height: 400,
-                        id: 'partsTabPanel',
                         tbar:{
                             xtype: 'toolbar',
                             id: 'partsToolbar',
@@ -132,25 +99,18 @@ Ext.define('ElectronicDatasheetViewport', {
                                     xtype: 'tbtext',
                                     id: "partsToolbarText",
                                     style: {fontWeight:'bold'},
-                                    text: 'Genetic Parts'
+                                    text: 'Promoters'
                                 },
                                 {
                                     xtype: 'tbfill'
                                 },
                                 // {
-                                //     xtype: 'button',
-                                //     text: 'Show All',
-                                //     tooltip: 'Show all the parts',
-                                //     id: 'showAllPartsButton',
-                                //     handler: this.showAllPartsButtonHandler
+                                //     xtype: 'tbseparator'
                                 // },
-                                {
-                                    xtype: 'tbseparator'
-                                },
                                 {
                                     xtype: 'button',
                                     text: 'Export',
-                                    tooltip: 'Export all the parts in CSV format',
+                                    tooltip: 'Export the genetic parts in JSON format',
                                     id: 'partsExportButton',
                                     handler: this.partsExportButtonHandler
                                 }
@@ -163,28 +123,29 @@ Ext.define('ElectronicDatasheetViewport', {
                                 title: '',
                                 store: promoterStore, 
                                 columnLines: true,
+                                hidden: false,
                                 columns: [
                                     {
                                         xtype: 'gridcolumn',
-                                        dataIndex: 'displayId',
-                                        header: 'Name',
+                                        dataIndex: 'text-id',
+                                        header: 'Identifier',
                                         sortable: true,
-                                        width: 80,
+                                        width: 125,
                                         editable: false
                                     },
                                     {
                                         xtype: 'numbercolumn',
-                                        dataIndex: 'meanFluorescencePerCell',
+                                        dataIndex: 'mean-fluorescence-per-cell',
                                         header: 'Performance',
                                         sortable: true,
-                                        width: 150,
+                                        width: 125,
                                         align: 'left',
                                         editable: false,
                                         format: '0,000'
                                     },
                                     {
                                         xtype: 'numbercolumn',
-                                        dataIndex: 'meanFluorescencePerCellSD',
+                                        dataIndex: 'standard-deviation',
                                         header: 'Standard Deviation',
                                         sortable: true,
                                         width: 125,
@@ -280,10 +241,14 @@ Ext.define('ElectronicDatasheetViewport', {
         
         this.callParent();
 
+        var libraryGridExportButton = Ext.ComponentManager.get('libraryGridExportButton'); 
+        libraryGridExportButton.setHandler(this.libraryGridExportButtonClickHandler, this);
+       
         this.libraryGridPanel = Ext.ComponentManager.get('libraryGridPanel');
         var libraryGridSelectionModel = this.libraryGridPanel.getSelectionModel();
         libraryGridSelectionModel.on('rowselect', this.libraryGridRowSelectHandler, this);
-       
+        libraryGridSelectionModel.on('rowselect', this.libraryGridRowSelectHandler, this);
+        
 	    this.promoterGridPanel = Ext.ComponentManager.get('promoterGridPanel');
         var promoterGridSelectionModel = this.promoterGridPanel.getSelectionModel();
 	    promoterGridSelectionModel.on('rowselect', this.promoterGridRowSelectHandler, this);
@@ -293,9 +258,6 @@ Ext.define('ElectronicDatasheetViewport', {
 	    terminatorGridSelectionModel.on('rowselect', this.terminatorGridRowSelectHandler, this);
         
         this.partsToolbarText = Ext.ComponentManager.get('partsToolbarText');
-
-        var libraryGridExportButton = Ext.ComponentManager.get('libraryGridExportButton'); 
-        libraryGridExportButton.setHandler(this.libraryGridExportButtonClickHandler, this);
         
         this.infoTabPanel = Ext.ComponentManager.get('infoTabPanel');
         
@@ -307,84 +269,84 @@ Ext.define('ElectronicDatasheetViewport', {
  *  Protected Methods
  * 
  **********************/
-        fetchParts:function()
-        {
-            Ext.Ajax.request({
-                       url: WEB_SERVICE_BASE_URL + 'parts?format=json',
-                       method: "GET",
-                       success: this.fetchPartsResultHandler,
-                       failure: this.fetchPartsErrorHandler,
-//                       params: {
-//                                    id: constructID,
-//                                    format: 'json'
-//                                },
-                       scope: this
-            });
-        },
+//         fetchParts:function()
+//         {
+//             Ext.Ajax.request({
+//                        url: WEB_SERVICE_BASE_URL + 'parts?format=json',
+//                        method: "GET",
+//                        success: this.fetchPartsResultHandler,
+//                        failure: this.fetchPartsErrorHandler,
+// //                       params: {
+// //                                    id: constructID,
+// //                                    format: 'json'
+// //                                },
+//                        scope: this
+//             });
+//         },
         
-        fetchlibrary:function()
-        {
-            Ext.Ajax.request({
-                       url: WEB_SERVICE_BASE_URL + 'library.json',
-                       method: "GET",
-                       success: this.fetchlibraryResultHandler,
-                       failure: this.fetchlibraryErrorHandler,
-                       scope: this
-            });
-        },
+        // fetchlibrary:function()
+        // {
+        //     Ext.Ajax.request({
+        //                url: WEB_SERVICE_BASE_URL + 'library.json',
+        //                method: "GET",
+        //                success: this.fetchlibraryResultHandler,
+        //                failure: this.fetchlibraryErrorHandler,
+        //                scope: this
+        //     });
+        // },
 	
-        showCollectionPanel: function(collectionRecord)
-        {
-            var id = collectionRecord.get('id');
-            var panel;
+        // showLibraryPanel: function(libraryRecord)
+        // {
+        //     var id = libraryRecord.get('id');
+        //     var panel;
 
-            // if(id === 1)
-            // {
-            //     panel = Ext.ComponentManager.get('pilotProjectPanel');
+        //     // if(id === 1)
+        //     // {
+        //     //     panel = Ext.ComponentManager.get('pilotProjectPanel');
                 
-            //     if(panel === undefined)
-            //     {
-            //         panel = new PilotProjectPanel();
-            //         this.infoTabPanel.add(panel);
-            //     }
-            // }
+        //     //     if(panel === undefined)
+        //     //     {
+        //     //         panel = new PilotProjectPanel();
+        //     //         this.infoTabPanel.add(panel);
+        //     //     }
+        //     // }
 
-            if(id === 1)
-            {
-                panel = Ext.ComponentManager.get('modularPromoterLibraryPanel');
+        //     if(id === 1)
+        //     {
+        //         panel = Ext.ComponentManager.get('modularPromoterLibraryPanel');
                 
-                if(panel === undefined)
-                {
-                    panel = new ModularPromoterLibraryPanel();
-                    this.infoTabPanel.add(panel);
-                }
-            }
+        //         if(panel === undefined)
+        //         {
+        //             panel = new ModularPromoterLibraryPanel();
+        //             this.infoTabPanel.add(panel);
+        //         }
+        //     }
 
-            if(id === 3)
-            {
-                panel = Ext.ComponentManager.get('randomPromoterLibraryPanel');
+        //     if(id === 2)
+        //     {
+        //         panel = Ext.ComponentManager.get('randomPromoterLibraryPanel');
                 
-                if(panel === undefined)
-                {
-                    panel = new RandomPromoterLibraryPanel();
-                    this.infoTabPanel.add(panel);
-                }
-            }
+        //         if(panel === undefined)
+        //         {
+        //             panel = new RandomPromoterLibraryPanel();
+        //             this.infoTabPanel.add(panel);
+        //         }
+        //     }
 
-            if(id === 4)
-            {
-                panel = Ext.ComponentManager.get('terminatorLibraryPanel');
+        //     if(id === 4)
+        //     {
+        //         panel = Ext.ComponentManager.get('terminatorLibraryPanel');
                 
-                if(panel === undefined)
-                {
-                    panel = new TerminatorLibraryPanel();
-                    this.infoTabPanel.add(panel);
-                }
-            }
+        //         if(panel === undefined)
+        //         {
+        //             panel = new TerminatorLibraryPanel();
+        //             this.infoTabPanel.add(panel);
+        //         }
+        //     }
             
-            this.infoTabPanel.setActiveTab(panel);
-            panel.showInfo(collectionRecord, this.parts);
-        },
+        //     this.infoTabPanel.setActiveTab(panel);
+        //     panel.showInfo(libraryRecord, this.parts);
+        // },
 
         showPartPanel: function(partRecord)
         {
@@ -481,33 +443,96 @@ Ext.define('ElectronicDatasheetViewport', {
     //
     //******************
 
+    libraryGridExportButtonClickHandler: function(button, event)
+    {
+        var exportWindow = window.open(WEB_SERVICE_BASE_URL + 'libraries.json',"libraries","width=640,height=480");
+        exportWindow.scrollbars.visible = true;
+        exportWindow.alert("Use File/Save As in the menu bar to save this document.");
+    },
+    
     libraryGridRowSelectHandler: function(selectModel, rowIndex, record)
     {
         var id = record.get('id');
-        var promoterStore = this.promoterGridPanel.getStore();
-        var terminatorStore = this.terminatorGridPanel.getStore();
-        promoterStore.clearFilter(false);
-        terminatorStore.clearFilter(false);
-
-        promoterStore.filter([
+        var panel;
+        var promoterStore;
+        
+        if(id === 1)
         {
-            property     : 'collectionId',
-            value        : id,
-            anyMatch     : false,
-            exactMatch   : true
-        }]);
-    
-        terminatorStore.filter([
-        {
-            property     : 'collectionId',
-            value        : id,
-            anyMatch     : false,
-            exactMatch   : true
-        }]);
+            promoterStore = this.promoterGridPanel.getStore();
+            promoterStore.clearFilter(false);
+            promoterStore.filter([
+            {
+                property     : 'library-id',
+                value        : id,
+                anyMatch     : false,
+                exactMatch   : true
+            }]);
+            
+            // panel = Ext.ComponentManager.get('modularPromoterLibraryPanel');
+            
+            // if(panel === undefined)
+            // {
+            //     panel = new ModularPromoterLibraryPanel();
+            //     this.infoTabPanel.add(panel);
+            // }
+            
+            Ext.Msg.alert('Modular Promoter Library', 'The Modular Promoter Library datasheet will be provided in an upcoming release.');
+           
+            // Place these statements outside the branches after all the libraries are added
+            var libraryName = record.get('name');
+            this.partsToolbarText.setText(libraryName);
+        }
 
-        var collectionName = record.get('name');
-        this.partsToolbarText.setText(collectionName);
-        this.showCollectionPanel(record);
+        if(id === 2)
+        {
+            // panel = Ext.ComponentManager.get('randomPromoterLibraryPanel');
+            
+            // if(panel === undefined)
+            // {
+            //     panel = new RandomPromoterLibraryPanel();
+            //     this.infoTabPanel.add(panel);
+            // }
+            
+            Ext.Msg.alert('Random Promoter Library', 'The Random Promoters will be added in an upcoming release.');
+        }
+        
+        if(id === 3)
+        {
+            // panel = Ext.ComponentManager.get('terminatorLibraryPanel');
+            
+            // if(panel === undefined)
+            // {
+            //     panel = new TerminatorLibraryPanel();
+            //     this.infoTabPanel.add(panel);
+            // }
+            
+            Ext.Msg.alert('Translation Initiation Element Library', 'The Translation Initiation Elements will be added in an upcoming release.');
+        }
+
+        if(id === 4)
+        {
+            // var terminatorStore = this.terminatorGridPanel.getStore();
+            // terminatorStore.clearFilter(false);
+            // terminatorStore.filter([
+            // {
+            //     property     : 'collectionId',
+            //     value        : id,
+            //     anyMatch     : false,
+            //     exactMatch   : true
+            // }]);
+            // panel = Ext.ComponentManager.get('terminatorLibraryPanel');
+            
+            // if(panel === undefined)
+            // {
+            //     panel = new TerminatorLibraryPanel();
+            //     this.infoTabPanel.add(panel);
+            // }
+            
+            Ext.Msg.alert('Terminator Library', 'The Terminator Library will be added in an upcoming release.');
+        }
+        
+        // this.infoTabPanel.setActiveTab(panel);
+        // panel.showInfo(record, this.parts);
     },
     
     promoterGridRowSelectHandler: function(selectModel, rowIndex, record)
@@ -608,16 +633,9 @@ Ext.define('ElectronicDatasheetViewport', {
 //            }
 //	},
 
-        libraryGridExportButtonClickHandler: function(button, event)
-        {
-            var exportWindow = window.open(WEB_SERVICE_BASE_URL + 'library?format=json',"library","width=640,height=480");
-            exportWindow.scrollbars.visible = true;
-            exportWindow.alert("Use File/Save As in the menu bar to save this document.");
-        },
-
         partsExportButtonHandler: function()
         {
-            var exportWindow = window.open(WEB_SERVICE_BASE_URL + 'parts?format=csv',"Parts","width=640,height=480");
+            var exportWindow = window.open(WEB_SERVICE_BASE_URL + 'promoters.json', "Promoters", "width=640,height=480");
             exportWindow.scrollbars.visible = true;
             exportWindow.alert("Use File/Save As in the menu bar to save this document.");
         },
@@ -629,12 +647,12 @@ Ext.define('ElectronicDatasheetViewport', {
 //            exportWindow.alert("Use File/Save As in the menu bar to save this document.");
 //        },
 
-        showAllPartsButtonHandler:function()
-        {
-            Ext.getCmp('promoterGridPanel').getStore().clearFilter(false);
-            Ext.getCmp('terminatorGridPanel').getStore().clearFilter(false);
-            Ext.getCmp('partsToolbarText').setText('Parts');
-        },
+        // showAllPartsButtonHandler:function()
+        // {
+        //     Ext.getCmp('promoterGridPanel').getStore().clearFilter(false);
+        //     Ext.getCmp('terminatorGridPanel').getStore().clearFilter(false);
+        //     Ext.getCmp('partsToolbarText').setText('Parts');
+        // },
 
 //        showAllConstructsButtonClickHandler: function(button, event)
 //        {
@@ -670,8 +688,8 @@ Ext.define('ElectronicDatasheetViewport', {
             var index = store.find('id', '1', 0, false, false, true);
             store.removeAt(index);
 
-            var collectionRecord = store.getAt(0);
-            this.showCollectionPanel(collectionRecord);
+            var libraryRecord = store.getAt(0);
+            this.showCollectionPanel(libraryRecord);
         },
         
         fetchlibraryErrorHandler: function(response, opts)

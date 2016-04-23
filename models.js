@@ -12,14 +12,13 @@ Ext.define('Library', {
 Ext.define('Promoter', {
     extend: 'Ext.data.Model',
     fields: [
-        {name: 'collectionId', type: 'int'},
-        {name: 'displayId', type: 'string'},
-        {name: 'type', type: 'string'},
-        {name: 'description', type: 'string'},
-        {name: 'dnaSequence', type: 'string'},
-        {name: 'meanFluorescencePerCell',type: 'float'},
-        {name: 'meanFluorescencePerCellSD', type: 'float'},
-        {name: 'constructId', type: 'string'}
+        {name: 'library-id', type: 'int'},
+        {name: 'id', type: 'int'},
+        {name: 'text-id', type: 'string'},
+        {name: 'dna-sequence', type: 'string'},
+        {name: 'mean-fluorescence-per-cell',type: 'float'},
+        {name: 'standard-deviation', type: 'float'},
+        {name: 'plasmid-id', type: 'string'}
     ]
 });
 

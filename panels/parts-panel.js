@@ -192,13 +192,13 @@ Ext.define('PartPanel',
             
             this.partRecord = partRecord;
             this.parts = parts;
-            biofabID = partRecord.get('displayId');
+            biofabID = partRecord.get('text-id');
             this.setTitle(biofabID);
-            dnaSequence = partRecord.get('dnaSequence');
+            dnaSequence = partRecord.get('dna-sequence');
             this.partDesignPanel.getComponent('partDesignToolbar').getComponent('partDesignLabel').setText('<b>DNA Sequence for ' + biofabID + '</b>');
             this.partDesignPanel.getComponent('sequenceTextArea').setValue(dnaSequence);
-            var collectionId = this.partRecord.get('collectionId');
-            this.constructId = this.partRecord.get('constructId');
+            var collectionId = this.partRecord.get('library-id');
+            this.constructId = this.partRecord.get('plasmid-id');
             
             
             //TODO Deal with null constructId

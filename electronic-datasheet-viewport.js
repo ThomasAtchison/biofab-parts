@@ -1,8 +1,8 @@
 /*
+ * Electronic Datasheet Viewport
  * 
- * File: electronic-datasheet-viewport.js
- * 
- * 
+ *  Refactor
+ *      1. Rename "library" to "collections" 
  */
 
 Ext.define('ElectronicDatasheetViewport', { 
@@ -70,7 +70,7 @@ Ext.define('ElectronicDatasheetViewport', {
                             items: [
                                 {
                                     xtype: 'tbtext',
-                                    html: '<b>Libraries</b>'
+                                    html: '<b>Collections</b>'
                                 },
                                 {
                                     xtype: 'tbfill'

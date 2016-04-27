@@ -127,7 +127,7 @@ Ext.define('ElectronicDatasheetViewport', {
                                     {
                                         xtype: 'gridcolumn',
                                         dataIndex: 'id',
-                                        header: 'Identifier',
+                                        header: 'Promoter',
                                         sortable: true,
                                         width: 125,
                                         editable: false
@@ -181,7 +181,7 @@ Ext.define('ElectronicDatasheetViewport', {
                                     {
                                         xtype: 'gridcolumn',
                                         dataIndex: 'id',
-                                        header: 'Identifier',
+                                        header: 'Terminator',
                                         sortable: false,
                                         width: 125,
                                         editable: false

@@ -10,10 +10,10 @@ var libraryStore = new Ext.data.JsonStore({
     autoLoad: true,
     proxy: {
         type: 'ajax',
-        url: WEB_SERVICE_BASE_URL + 'libraries.json',
+        url: WEB_SERVICE_BASE_URL + 'collections.json',
         reader: {
             type: 'json',
-            root: 'libraries',
+            root: 'collections',
             idProperty: 'id'
         }
     }
@@ -29,7 +29,7 @@ var promoterStore = new Ext.data.Store({
         reader: {
             type: 'json',
             root: 'promoters',
-            idProperty: 'id'
+            idProperty: 'db-id'
         }
     },
     sorters: [
@@ -41,17 +41,22 @@ var promoterStore = new Ext.data.Store({
 });
         
 var terminatorStore = new Ext.data.Store({
+    storeId: 'terminatorStore',
     model: 'Terminator',
+    autoLoad: true,
     proxy: {
         type: 'ajax',
-        url : '',
-        reader: {type: 'json'}
+        url : WEB_SERVICE_BASE_URL + 'terminators.json',
+        reader: {
+            type: 'json',
+            root: 'terminators',
+            idProperty: 'db-id'
+        }
     },
     sorters:[
         {
-            property : 'terminationEfficiency',
+            property : 'termination-efficiency',
             direction: 'DESC'
         }
-    ],
-    autoLoad: false
+    ]
 });

@@ -12,9 +12,9 @@ Ext.define('Library', {
 Ext.define('Promoter', {
     extend: 'Ext.data.Model',
     fields: [
-        {name: 'library-id', type: 'int'},
-        {name: 'id', type: 'int'},
-        {name: 'text-id', type: 'string'},
+        {name: 'collection-id', type: 'int'},
+        {name: 'db-id', type: 'int'},
+        {name: 'id', type: 'string'},
         {name: 'dna-sequence', type: 'string'},
         {name: 'mean-fluorescence-per-cell',type: 'float'},
         {name: 'standard-deviation', type: 'float'},
@@ -25,14 +25,15 @@ Ext.define('Promoter', {
 Ext.define('Terminator', {
     extend: 'Ext.data.Model',
     fields: [
-        {name: 'collectionId', type: 'int'},
-        {name: 'displayId',  type: 'string'},
-        {name: 'type', type: 'string'},
+        {name: 'collection-id', type: 'int'},
+        {name: 'db-id',  type: 'int'},
+        {name: 'id',  type: 'string'},
         {name: 'description', type: 'string'},
-        {name: 'dnaSequence', type: 'string'},
-        {name: 'terminationEfficiency',type: 'float'},
-        {name: 'standardDeviation', type: 'float'},
-        {name: 'constructId', type: 'string'}
+        {name: 'dna-sequence', type: 'string'},
+        {name: 'termination-efficiency',type: 'float'},
+        {name: 'termination-efficiency-sd', type: 'float'},
+        {name: 'plasmid-id', type: 'string'},
+        {name: 'strain-id', type: 'string'},
     ]
 });
       

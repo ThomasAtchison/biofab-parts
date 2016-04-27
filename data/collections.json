@@ -1,5 +1,5 @@
 {
-    "libraries":[
+    "collections":[
         {
             "id":"1",
             "name":"Modular Promoter Library", 
@@ -16,7 +16,7 @@
         },
         {
             "id":"3",
-            "name":"Translation Initiation Elements Library", 
+            "name":"Translation Initiation Element Library", 
             "description":"Description", 
             "version":"0.1.0",
             "release-date":""

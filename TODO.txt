@@ -1,5 +1,6 @@
 To Do List
 
+- Rename "library" to "collection"
 - Display the Modular Promoter Library datasheet
 - Display the Terminator Library datasheet
 - Display the Terminators in the grid panel below the Collections panel

@@ -192,17 +192,17 @@ Ext.define('PartPanel',
             
             this.partRecord = partRecord;
             this.parts = parts;
-            biofabID = partRecord.get('text-id');
+            biofabID = partRecord.get('id');
             this.setTitle(biofabID);
             dnaSequence = partRecord.get('dna-sequence');
             this.partDesignPanel.getComponent('partDesignToolbar').getComponent('partDesignLabel').setText('<b>DNA Sequence for ' + biofabID + '</b>');
             this.partDesignPanel.getComponent('sequenceTextArea').setValue(dnaSequence);
-            var collectionId = this.partRecord.get('library-id');
+            var collectionId = this.partRecord.get('collection-id');
             this.constructId = this.partRecord.get('plasmid-id');
             
             
             //TODO Deal with null constructId
-            this.fetchConstructDesign(this.constructId);
+            // this.fetchConstructDesign(this.constructId);
 
             //Temporary patch till I fix the problem with the Pilot Project
             if(collectionId !== 1)

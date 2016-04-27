@@ -1,8 +1,6 @@
 /*
  * Electronic Datasheet Viewport
- * 
- *  Refactor
- *      1. Rename "library" to "collections" 
+ *  
  */
 
 Ext.define('ElectronicDatasheetViewport', { 
@@ -112,7 +110,8 @@ Ext.define('ElectronicDatasheetViewport', {
                                     text: 'Export',
                                     tooltip: 'Export the genetic parts in JSON format',
                                     id: 'partsExportButton',
-                                    handler: this.partsExportButtonHandler
+                                    handler: this.partsExportButtonHandler,
+                                    hidden: true
                                 }
                             ]
                         },
@@ -127,7 +126,7 @@ Ext.define('ElectronicDatasheetViewport', {
                                 columns: [
                                     {
                                         xtype: 'gridcolumn',
-                                        dataIndex: 'text-id',
+                                        dataIndex: 'id',
                                         header: 'Identifier',
                                         sortable: true,
                                         width: 125,
@@ -136,7 +135,7 @@ Ext.define('ElectronicDatasheetViewport', {
                                     {
                                         xtype: 'numbercolumn',
                                         dataIndex: 'mean-fluorescence-per-cell',
-                                        header: 'Performance',
+                                        header: 'Strength',
                                         sortable: true,
                                         width: 125,
                                         align: 'left',
@@ -155,11 +154,19 @@ Ext.define('ElectronicDatasheetViewport', {
                                     }
                                 ]
                             },
-                            {
+                             {
                                 xtype: 'panel',
+                                id: 'randomPromoterGridPanel',
                                 title: '',
                                 hidden: true,
-                                html: '<b>The translation initiation elements will be listed in an upcoming release.</b>'
+                                html: '<b>The Random Promoter Library will be listed in an upcoming release.</b>'
+                            },
+                            {
+                                xtype: 'panel',
+                                id: 'translationInitiationElementGridPanel',
+                                title: '',
+                                hidden: true,
+                                html: '<b>The Translation Initiation Elements will be listed in an upcoming release.</b>'
                             },
                             {
                                 xtype: 'gridpanel',
@@ -173,42 +180,25 @@ Ext.define('ElectronicDatasheetViewport', {
                                 columns: [
                                     {
                                         xtype: 'gridcolumn',
-                                        dataIndex: 'displayId',
-                                        header: 'Part',
-                                        sortable: true,
-                                        width: 80,
+                                        dataIndex: 'id',
+                                        header: 'Identifier',
+                                        sortable: false,
+                                        width: 125,
                                         editable: false
                                     },
-                                    {
-                                        xtype: 'gridcolumn',
-                                        dataIndex: 'constructId',
-                                        header: 'Construct',
-                                        sortable: true,
-                                        width: 100,
-                                        editable: false
-                                    },
-//                                    {
-//                                        xtype: 'gridcolumn',
-//                                        dataIndex: 'type',
-//                                        header: 'Part Type',
-//                                        sortable: true,
-//                                        width: 100,
-//                                        editable: false
-//
-//                                    },
                                     {
                                         xtype: 'gridcolumn',
                                         dataIndex: 'description',
                                         header: 'Description',
-                                        sortable: true,
-                                        width: 175,
+                                        sortable: false,
+                                        width: 150,
                                         editable: false
                                     },
                                     {
                                         xtype: 'numbercolumn',
-                                        dataIndex: 'terminationEfficiency',
+                                        dataIndex: 'termination-efficiency',
                                         header: 'Termination Efficiency',
-                                        sortable: true,
+                                        sortable: false,
                                         width: 150,
                                         align: 'left',
                                         editable: false,
@@ -216,10 +206,10 @@ Ext.define('ElectronicDatasheetViewport', {
                                     },
                                     {
                                         xtype: 'numbercolumn',
-                                        dataIndex: 'standardDeviation',
-                                        header: 'Standard Deviation',
-                                        sortable: true,
-                                        width: 125,
+                                        dataIndex:'termination-efficiency-sd',
+                                        header: 'SD',
+                                        sortable: false,
+                                        width: 80,
                                         align: 'left',
                                         editable: false,
                                         format: '0,000.00'
@@ -227,7 +217,7 @@ Ext.define('ElectronicDatasheetViewport', {
                                 ]
                             }
                         ]
-                    },
+                    }
                 ]
             },
             {
@@ -462,7 +452,7 @@ Ext.define('ElectronicDatasheetViewport', {
             promoterStore.clearFilter(false);
             promoterStore.filter([
             {
-                property     : 'library-id',
+                property     : 'collection-id',
                 value        : id,
                 anyMatch     : false,
                 exactMatch   : true
@@ -476,11 +466,12 @@ Ext.define('ElectronicDatasheetViewport', {
             //     this.infoTabPanel.add(panel);
             // }
             
-            Ext.Msg.alert('Modular Promoter Library', 'The Modular Promoter Library datasheet will be provided in an upcoming release.');
+            // Ext.Msg.alert('Modular Promoter Library', 'The Modular Promoter Library datasheet will be provided in an upcoming release.');
            
-            // Place these statements outside the branches after all the libraries are added
-            var libraryName = record.get('name');
-            this.partsToolbarText.setText(libraryName);
+            Ext.ComponentManager.get('randomPromoterGridPanel').hide();
+            Ext.ComponentManager.get('translationInitiationElementGridPanel').hide();
+            Ext.ComponentManager.get('terminatorGridPanel').hide();
+            Ext.ComponentManager.get('promoterGridPanel').show();
         }
 
         if(id === 2)
@@ -493,7 +484,12 @@ Ext.define('ElectronicDatasheetViewport', {
             //     this.infoTabPanel.add(panel);
             // }
             
-            Ext.Msg.alert('Random Promoter Library', 'The Random Promoters will be added in an upcoming release.');
+            // Ext.Msg.alert('Random Promoter Library', 'The Random Promoters will be added in an upcoming release.');
+            
+            Ext.ComponentManager.get('promoterGridPanel').hide();
+            Ext.ComponentManager.get('translationInitiationElementGridPanel').hide();
+            Ext.ComponentManager.get('terminatorGridPanel').hide();
+            Ext.ComponentManager.get('randomPromoterGridPanel').show();
         }
         
         if(id === 3)
@@ -506,7 +502,12 @@ Ext.define('ElectronicDatasheetViewport', {
             //     this.infoTabPanel.add(panel);
             // }
             
-            Ext.Msg.alert('Translation Initiation Element Library', 'The Translation Initiation Elements will be added in an upcoming release.');
+            // Ext.Msg.alert('Translation Initiation Element Library', 'The Translation Initiation Elements will be added in an upcoming release.');
+            
+            Ext.ComponentManager.get('promoterGridPanel').hide();
+            Ext.ComponentManager.get('randomPromoterGridPanel').hide();
+            Ext.ComponentManager.get('terminatorGridPanel').hide();
+            Ext.ComponentManager.get('translationInitiationElementGridPanel').show();
         }
 
         if(id === 4)
@@ -520,7 +521,8 @@ Ext.define('ElectronicDatasheetViewport', {
             //     anyMatch     : false,
             //     exactMatch   : true
             // }]);
-            // panel = Ext.ComponentManager.get('terminatorLibraryPanel');
+            
+            // var panel = Ext.ComponentManager.get('terminatorLibraryPanel');
             
             // if(panel === undefined)
             // {
@@ -528,11 +530,18 @@ Ext.define('ElectronicDatasheetViewport', {
             //     this.infoTabPanel.add(panel);
             // }
             
-            Ext.Msg.alert('Terminator Library', 'The Terminator Library will be added in an upcoming release.');
+            // Ext.Msg.alert('Terminator Library', 'The Terminator Library will be added in an upcoming release.');
+            
+            Ext.ComponentManager.get('promoterGridPanel').hide();
+            Ext.ComponentManager.get('randomPromoterGridPanel').hide();
+            Ext.ComponentManager.get('translationInitiationElementGridPanel').hide();
+            Ext.ComponentManager.get('terminatorGridPanel').show();
         }
         
         // this.infoTabPanel.setActiveTab(panel);
         // panel.showInfo(record, this.parts);
+        var collectionName = record.get('name');
+        this.partsToolbarText.setText(collectionName);
     },
     
     promoterGridRowSelectHandler: function(selectModel, rowIndex, record)

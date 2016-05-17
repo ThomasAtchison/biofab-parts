@@ -443,35 +443,37 @@ Ext.define('ElectronicDatasheetViewport', {
     libraryGridRowSelectHandler: function(selectModel, rowIndex, record)
     {
         var id = record.get('id');
-        var panel;
-        var promoterStore;
+        var datasheet;
+        var store;
         
         if(id === 1)
         {
-            promoterStore = this.promoterGridPanel.getStore();
-            promoterStore.clearFilter(false);
-            promoterStore.filter([
-            {
-                property     : 'collection-id',
-                value        : id,
-                anyMatch     : false,
-                exactMatch   : true
-            }]);
-            
-            // panel = Ext.ComponentManager.get('modularPromoterLibraryPanel');
-            
-            // if(panel === undefined)
+            store = this.promoterGridPanel.getStore();
+            // store.clearFilter(false);
+            // store.filter([
             // {
-            //     panel = new ModularPromoterLibraryPanel();
-            //     this.infoTabPanel.add(panel);
-            // }
+            //     property     : 'collection-id',
+            //     value        : id,
+            //     anyMatch     : false,
+            //     exactMatch   : true
+            // }]);
             
-            // Ext.Msg.alert('Modular Promoter Library', 'The Modular Promoter Library datasheet will be provided in an upcoming release.');
-           
             Ext.ComponentManager.get('randomPromoterGridPanel').hide();
             Ext.ComponentManager.get('translationInitiationElementGridPanel').hide();
             Ext.ComponentManager.get('terminatorGridPanel').hide();
             Ext.ComponentManager.get('promoterGridPanel').show();
+            
+            datasheet = Ext.ComponentManager.get('modularPromoterLibraryDatasheet');
+            
+            if(datasheet === undefined)
+            {
+                datasheet = new ModularPromoterLibraryDatasheet();
+                this.infoTabPanel.add(datasheet);
+            }
+            
+            datasheet.displayInformation(record, store);
+            
+            // Ext.Msg.alert('Modular Promoter Library', 'The Modular Promoter Library datasheet will be provided in an upcoming release.');
         }
 
         if(id === 2)

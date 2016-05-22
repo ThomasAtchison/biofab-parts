@@ -41,7 +41,7 @@
 ######################
 *.log
 *.sql
-*.sqlite
+#*.sqlite  # We'll include .sqlite files.  Sql.js (http://kripken.github.io/sql.js/) supports client-side interactions with SQLite databases.
 
 # OS generated files #
 ######################

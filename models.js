@@ -9,7 +9,8 @@ Ext.define('Library', {
     ]
 });
 
-Ext.define('Promoter', {
+// Deprecated
+Ext.define('ModularPromoter', {
     extend: 'Ext.data.Model',
     fields: [
         {name: 'collection-id', type: 'int'},
@@ -22,12 +23,24 @@ Ext.define('Promoter', {
     ]
 });
 
+Ext.define('Promoter', {
+    extend: 'Ext.data.Model',
+    fields: [
+        {name: 'db-id', type: 'int'},
+        {name: 'biofab-id', type: 'string'},
+        {name: 'dna-sequence', type: 'string'},
+        {name: 'strength',type: 'float'},
+        {name: 'standard-deviation', type: 'float'},
+        {name: 'plasmid-biofab-id', type: 'string'}
+    ]
+});
+
 Ext.define('Terminator', {
     extend: 'Ext.data.Model',
     fields: [
         {name: 'collection-id', type: 'int'},
         {name: 'db-id',  type: 'int'},
-        {name: 'id',  type: 'string'},
+        {name: 'biofab-id',  type: 'string'},
         {name: 'description', type: 'string'},
         {name: 'dna-sequence', type: 'string'},
         {name: 'termination-efficiency',type: 'float'},

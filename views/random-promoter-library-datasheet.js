@@ -4,11 +4,11 @@
  * 
  */
 
-Ext.define('ModularPromoterLibraryDatasheet',
+Ext.define('RandomPromoterLibraryDatasheet',
 {
     extend: 'Ext.panel.Panel',
-    id: 'modularPromoterLibraryDatasheet',
-    title: 'Modular Promoter Library',
+    id: 'randomPromoterLibraryDatasheet',
+    title: 'Random Promoter Library',
     layout: 'absolute',
     tpl: '',
     closable: true,
@@ -40,7 +40,7 @@ Ext.define('ModularPromoterLibraryDatasheet',
                 items: [
                     {
                         xtype: 'panel',
-                        itemId: 'mplDesignPanel',
+                        itemId: 'designPanel',
                         title: 'Design',
                         layout: 'fit',
                         region: 'north',
@@ -57,7 +57,7 @@ Ext.define('ModularPromoterLibraryDatasheet',
                     {
                         xtype: 'panel',
                         title: 'Performance',
-                        itemId: 'mplPerformancePanel',
+                        itemId: 'performancePanel',
                         layout: 'auto',
                         height: 450,
                         region:'center',
@@ -66,7 +66,7 @@ Ext.define('ModularPromoterLibraryDatasheet',
                     {
                         xtype:'panel',
                         title: 'Notes',
-                        itemId: 'mplNotesPanel',
+                        itemId: 'notesPanel',
                         layout: 'fit',
                         height: 100,
                         region: 'south',
@@ -87,9 +87,9 @@ Ext.define('ModularPromoterLibraryDatasheet',
         
         this.callParent();
         
-        this.designPanel = this.getComponent('centerPanel').getComponent('mplDesignPanel');
+        this.designPanel = this.getComponent('centerPanel').getComponent('designPanel');
         this.collectionTextArea = this.designPanel.getComponent("collectionTextArea");
-        this.performancePanel = this.getComponent('centerPanel').getComponent('mplPerformancePanel');
+        this.performancePanel = this.getComponent('centerPanel').getComponent('performancePanel');
     },
    
     //
@@ -123,7 +123,7 @@ Ext.define('ModularPromoterLibraryDatasheet',
                     height: 400,
                     renderTo: element.dom,
                     animate: false,
-                    store: modularPromoterStore,
+                    store: randomPromoterStore,
                     axes: [
                         {
                           type: 'Numeric',

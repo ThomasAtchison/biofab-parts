@@ -1,0 +1,1106 @@
+{"random-promoters":[
+  {
+    "db-id": 1,
+    "biofab-id": "apFAB156",
+    "strength": 2.46,
+    "standard-deviation": 0.03,
+    "plasmid-biofab-id": "pFAB518",
+    "dna-sequence": "TTCCCAGTTAATCATCCGGCTCCTAGTTTGTGTGGA"
+  },
+  {
+    "db-id": 2,
+    "biofab-id": "apFAB157",
+    "strength": 2.48,
+    "standard-deviation": 0.09,
+    "plasmid-biofab-id": "pFAB519",
+    "dna-sequence": "TTGGCGATTAATCATCCGGCTCATATTTTTTGTGGA"
+  },
+  {
+    "db-id": 3,
+    "biofab-id": "apFAB159",
+    "strength": 2.5,
+    "standard-deviation": 0.04,
+    "plasmid-biofab-id": "pFAB521",
+    "dna-sequence": "TTAACTGTTAATCATCCGGCTCCTAGCATGTGTGGA"
+  },
+  {
+    "db-id": 4,
+    "biofab-id": "apFAB160",
+    "strength": 2.52,
+    "standard-deviation": 0.06,
+    "plasmid-biofab-id": "pFAB522",
+    "dna-sequence": "TTACCGCTTAATCATCCGGCTCTTATAGTTTGTGGA"
+  },
+  {
+    "db-id": 5,
+    "biofab-id": "apFAB161",
+    "strength": 2.54,
+    "standard-deviation": 0.1,
+    "plasmid-biofab-id": "pFAB523",
+    "dna-sequence": "TTACTACTTAATCATCCGGCTCTTAGAGTATGTGGA"
+  },
+  {
+    "db-id": 6,
+    "biofab-id": "apFAB162",
+    "strength": 2.51,
+    "standard-deviation": 0.05,
+    "plasmid-biofab-id": "pFAB524",
+    "dna-sequence": "TTCCCCATTAATCATCCGGCTCGTAGTCTGTGTGGA"
+  },
+  {
+    "db-id": 7,
+    "biofab-id": "apFAB164",
+    "strength": 2.5,
+    "standard-deviation": 0.12,
+    "plasmid-biofab-id": "pFAB526",
+    "dna-sequence": "TTCAACATTAATCATCCGGCTCTTACCGTTTGTGGA"
+  },
+  {
+    "db-id": 8,
+    "biofab-id": "apFAB166",
+    "strength": 2.49,
+    "standard-deviation": 0.1,
+    "plasmid-biofab-id": "pFAB528",
+    "dna-sequence": "TTACCACTTAATCATCTGGCTCATAGTTTATGTGGA"
+  },
+  {
+    "db-id": 9,
+    "biofab-id": "apFAB167",
+    "strength": 2.68,
+    "standard-deviation": 0.1,
+    "plasmid-biofab-id": "pFAB529",
+    "dna-sequence": "TTCCTGATTAATCATCCGGCTCATAAAATTTGTGGA"
+  },
+  {
+    "db-id": 10,
+    "biofab-id": "apFAB168",
+    "strength": 3.33,
+    "standard-deviation": 0.14,
+    "plasmid-biofab-id": "pFAB530",
+    "dna-sequence": "TTATTCCTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 11,
+    "biofab-id": "apFAB177",
+    "strength": 2.67,
+    "standard-deviation": 0.05,
+    "plasmid-biofab-id": "pFAB539",
+    "dna-sequence": "TTTGAGCTTAATCATCCGGCTCAGGTGTAATGTGGA"
+  },
+  {
+    "db-id": 12,
+    "biofab-id": "apFAB180",
+    "strength": 2.98,
+    "standard-deviation": 0.06,
+    "plasmid-biofab-id": "pFAB542",
+    "dna-sequence": "TTTTTAATTAATCATCCGGCTCGTATTGTATGTGGA"
+  },
+  {
+    "db-id": 13,
+    "biofab-id": "apFAB181",
+    "strength": 4,
+    "standard-deviation": 0.32,
+    "plasmid-biofab-id": "pFAB543",
+    "dna-sequence": "TTTTCAGTTAATCATCCGGCTCGTAAACTGTGTGGA"
+  },
+  {
+    "db-id": 14,
+    "biofab-id": "apFAB182",
+    "strength": 2.94,
+    "standard-deviation": 0.11,
+    "plasmid-biofab-id": "pFAB544",
+    "dna-sequence": "TTACCCTTTAATCATCCGGCTCTTAACTTGTGTGGA"
+  },
+  {
+    "db-id": 15,
+    "biofab-id": "apFAB183",
+    "strength": 2.76,
+    "standard-deviation": 0.13,
+    "plasmid-biofab-id": "pFAB545",
+    "dna-sequence": "TTTAGAATTAATCATCCGGCTCCTAGGTTATGTGGA"
+  },
+  {
+    "db-id": 16,
+    "biofab-id": "apFAB184",
+    "strength": 3.62,
+    "standard-deviation": 0.15,
+    "plasmid-biofab-id": "pFAB546",
+    "dna-sequence": "TTTCCCATTAATCATCCGGCTCGTACGATGTGTGGA"
+  },
+  {
+    "db-id": 17,
+    "biofab-id": "apFAB186",
+    "strength": 2.92,
+    "standard-deviation": 0.16,
+    "plasmid-biofab-id": "pFAB548",
+    "dna-sequence": "TTCACTGTTAATCATCCGGCTCGTATGTTCTGTGGA"
+  },
+  {
+    "db-id": 18,
+    "biofab-id": "apFAB187",
+    "strength": 2.97,
+    "standard-deviation": 0.12,
+    "plasmid-biofab-id": "pFAB549",
+    "dna-sequence": "TTACAAGTTAATCATCCGGCTCGTATAGTCTGTGGA"
+  },
+  {
+    "db-id": 19,
+    "biofab-id": "apFAB188",
+    "strength": 1.93,
+    "standard-deviation": 2.26,
+    "plasmid-biofab-id": "pFAB550",
+    "dna-sequence": "TTATTCCTTAATCATCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 20,
+    "biofab-id": "apFAB189",
+    "strength": 3.69,
+    "standard-deviation": 0.86,
+    "plasmid-biofab-id": "pFAB551",
+    "dna-sequence": "TTTTTCCTTAATCATCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 21,
+    "biofab-id": "apFAB190",
+    "strength": 3.75,
+    "standard-deviation": 0.32,
+    "plasmid-biofab-id": "pFAB552",
+    "dna-sequence": "TTCTGCGTTAATCATCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 22,
+    "biofab-id": "apFAB192",
+    "strength": 2.57,
+    "standard-deviation": 0.31,
+    "plasmid-biofab-id": "pFAB554",
+    "dna-sequence": "TTAGCCCTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 23,
+    "biofab-id": "apFAB193",
+    "strength": 4.48,
+    "standard-deviation": 0.37,
+    "plasmid-biofab-id": "pFAB555",
+    "dna-sequence": "TTAAGGCTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 24,
+    "biofab-id": "apFAB194",
+    "strength": 4.17,
+    "standard-deviation": 0.18,
+    "plasmid-biofab-id": "pFAB556",
+    "dna-sequence": "TTATCATTTAATCATCCGGCTCAAGTTCGGTGTGGA"
+  },
+  {
+    "db-id": 25,
+    "biofab-id": "apFAB195",
+    "strength": 2.73,
+    "standard-deviation": 0.15,
+    "plasmid-biofab-id": "pFAB557",
+    "dna-sequence": "TTATAAATTAATCATCCGGCTCGGAAAGAATGTGGA"
+  },
+  {
+    "db-id": 26,
+    "biofab-id": "apFAB197",
+    "strength": 3.28,
+    "standard-deviation": 0.15,
+    "plasmid-biofab-id": "pFAB559",
+    "dna-sequence": "TTGACAATTAATCATCGGCTCTTAGGTTTTGTGGA"
+  },
+  {
+    "db-id": 27,
+    "biofab-id": "apFAB199",
+    "strength": 3.27,
+    "standard-deviation": 0.18,
+    "plasmid-biofab-id": "pFAB561",
+    "dna-sequence": "TTGAA-ATTAATCATCCGGCTCGTAGTGTGTGTGGA"
+  },
+  {
+    "db-id": 28,
+    "biofab-id": "apFAB200",
+    "strength": 4.41,
+    "standard-deviation": 0.38,
+    "plasmid-biofab-id": "pFAB562",
+    "dna-sequence": "TTGACAATTAATCATCGGCTCTTAGGGTTTGTGGA"
+  },
+  {
+    "db-id": 29,
+    "biofab-id": "apFAB201",
+    "strength": 4.75,
+    "standard-deviation": 0.29,
+    "plasmid-biofab-id": "pFAB563",
+    "dna-sequence": "TTCCTACTTAATCATCCGGCTCCTATAGTGTGTGGA"
+  },
+  {
+    "db-id": 30,
+    "biofab-id": "apFAB202",
+    "strength": 5.83,
+    "standard-deviation": 1.59,
+    "plasmid-biofab-id": "pFAB564",
+    "dna-sequence": "TTACCTGTTAATCATCCGGCTCGTATAATCTGTGGA"
+  },
+  {
+    "db-id": 31,
+    "biofab-id": "apFAB203",
+    "strength": 4.46,
+    "standard-deviation": 0.25,
+    "plasmid-biofab-id": "pFAB565",
+    "dna-sequence": "TTGAACGTTAATCATCCGGCTCGTAGTCTGTGTGGA"
+  },
+  {
+    "db-id": 32,
+    "biofab-id": "apFAB204",
+    "strength": 3.85,
+    "standard-deviation": 0.11,
+    "plasmid-biofab-id": "pFAB566",
+    "dna-sequence": "TTGAACATTAATCATCCGGCTCCTAGTGTATGTGGA"
+  },
+  {
+    "db-id": 33,
+    "biofab-id": "apFAB205",
+    "strength": 4.8,
+    "standard-deviation": 0.31,
+    "plasmid-biofab-id": "pFAB567",
+    "dna-sequence": "TTCCTCCTTAATCATCCGGCTCGTATTATATGTGGA"
+  },
+  {
+    "db-id": 34,
+    "biofab-id": "apFAB206",
+    "strength": 4.2,
+    "standard-deviation": 0.51,
+    "plasmid-biofab-id": "pFAB568",
+    "dna-sequence": "TTGCGATTTAATCATCCGGCTCGTACCCTTTGTGGA"
+  },
+  {
+    "db-id": 35,
+    "biofab-id": "apFAB207",
+    "strength": 4.26,
+    "standard-deviation": 0.57,
+    "plasmid-biofab-id": "pFAB569",
+    "dna-sequence": "TTACCATTTAATCATCCGGCTCATATACTTTGTGGA"
+  },
+  {
+    "db-id": 36,
+    "biofab-id": "apFAB208",
+    "strength": 4.17,
+    "standard-deviation": 0.47,
+    "plasmid-biofab-id": "pFAB570",
+    "dna-sequence": "TTAAACGTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 37,
+    "biofab-id": "apFAB209",
+    "strength": 8.05,
+    "standard-deviation": 1.17,
+    "plasmid-biofab-id": "pFAB571",
+    "dna-sequence": "TTCTGTGTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 38,
+    "biofab-id": "apFAB210",
+    "strength": 1.8,
+    "standard-deviation": 0.14,
+    "plasmid-biofab-id": "pFAB572",
+    "dna-sequence": "TTCGCCGTTAATCATCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 39,
+    "biofab-id": "apFAB211",
+    "strength": 5.3,
+    "standard-deviation": 0.54,
+    "plasmid-biofab-id": "pFAB573",
+    "dna-sequence": "TTAGACGTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 40,
+    "biofab-id": "apFAB212",
+    "strength": 5.57,
+    "standard-deviation": 0.96,
+    "plasmid-biofab-id": "pFAB574",
+    "dna-sequence": "TTCGTTTTTAATCATCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 41,
+    "biofab-id": "apFAB213",
+    "strength": 2.33,
+    "standard-deviation": 0.23,
+    "plasmid-biofab-id": "pFAB575",
+    "dna-sequence": "TTAGTTGTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 42,
+    "biofab-id": "apFAB215",
+    "strength": 3.44,
+    "standard-deviation": 0.28,
+    "plasmid-biofab-id": "pFAB577",
+    "dna-sequence": "TTTCAGGTTAATCATCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 43,
+    "biofab-id": "apFAB216",
+    "strength": 3.09,
+    "standard-deviation": 0.14,
+    "plasmid-biofab-id": "pFAB578",
+    "dna-sequence": "TTATTTGTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 44,
+    "biofab-id": "apFAB217",
+    "strength": 2.48,
+    "standard-deviation": 0.17,
+    "plasmid-biofab-id": "pFAB579",
+    "dna-sequence": "TTGACAATTAATCATCGGCTCCTAGGGTTTGTGGA"
+  },
+  {
+    "db-id": 45,
+    "biofab-id": "apFAB220",
+    "strength": 2.55,
+    "standard-deviation": 0.19,
+    "plasmid-biofab-id": "pFAB582",
+    "dna-sequence": "TTGACAATTAATCATCGGCTCATATGGTCTGTGGA"
+  },
+  {
+    "db-id": 46,
+    "biofab-id": "apFAB221",
+    "strength": 4.87,
+    "standard-deviation": 0.28,
+    "plasmid-biofab-id": "pFAB583",
+    "dna-sequence": "TTTAAAATTAATCATCCGGCTCATAGACTGTGTGGA"
+  },
+  {
+    "db-id": 47,
+    "biofab-id": "apFAB224",
+    "strength": 13.1,
+    "standard-deviation": 0.85,
+    "plasmid-biofab-id": "pFAB586",
+    "dna-sequence": "TTGTGCTTTAATCATCCGGCTCGTAGAGTGTGTGGA"
+  },
+  {
+    "db-id": 48,
+    "biofab-id": "apFAB225",
+    "strength": 13.71,
+    "standard-deviation": 1.31,
+    "plasmid-biofab-id": "pFAB587",
+    "dna-sequence": "TTCACTGTTAATCATCCGGCTCCTATAATTTGTGGA"
+  },
+  {
+    "db-id": 49,
+    "biofab-id": "apFAB226",
+    "strength": 29.25,
+    "standard-deviation": 2.77,
+    "plasmid-biofab-id": "pFAB588",
+    "dna-sequence": "TTCCACATTAATCATCCGGCTCGTATAATCTGTGGA"
+  },
+  {
+    "db-id": 50,
+    "biofab-id": "apFAB227",
+    "strength": 9.46,
+    "standard-deviation": 0.72,
+    "plasmid-biofab-id": "pFAB589",
+    "dna-sequence": "TTCCTCCTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 51,
+    "biofab-id": "apFAB228",
+    "strength": 14.36,
+    "standard-deviation": 0.75,
+    "plasmid-biofab-id": "pFAB590",
+    "dna-sequence": "TTAATCTTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 52,
+    "biofab-id": "apFAB229",
+    "strength": 15.31,
+    "standard-deviation": 7.01,
+    "plasmid-biofab-id": "pFAB591",
+    "dna-sequence": "TTAATATTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 53,
+    "biofab-id": "apFAB230",
+    "strength": 12.69,
+    "standard-deviation": 1.27,
+    "plasmid-biofab-id": "pFAB592",
+    "dna-sequence": "TTGGGGCTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 54,
+    "biofab-id": "apFAB231",
+    "strength": 10.58,
+    "standard-deviation": 8.61,
+    "plasmid-biofab-id": "pFAB593",
+    "dna-sequence": "TTAGATTTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 55,
+    "biofab-id": "apFAB241",
+    "strength": 57.4,
+    "standard-deviation": 9.07,
+    "plasmid-biofab-id": "pFAB642",
+    "dna-sequence": "TTAACATTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 56,
+    "biofab-id": "apFAB251",
+    "strength": 30.07,
+    "standard-deviation": 1.08,
+    "plasmid-biofab-id": "pFAB613",
+    "dna-sequence": "TTGACAATTAATCATCCGGCTCTTAGGTTCTGTGGA"
+  },
+  {
+    "db-id": 57,
+    "biofab-id": "apFAB252",
+    "strength": 32.49,
+    "standard-deviation": 2.97,
+    "plasmid-biofab-id": "pFAB614",
+    "dna-sequence": "TTGCTAATTAATCATCCGGCTCATATGCTTTGTGGA"
+  },
+  {
+    "db-id": 58,
+    "biofab-id": "apFAB253",
+    "strength": 49.1,
+    "standard-deviation": 7.05,
+    "plasmid-biofab-id": "pFAB615",
+    "dna-sequence": "TTGAATGTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 59,
+    "biofab-id": "apFAB254",
+    "strength": 57.29,
+    "standard-deviation": 4.07,
+    "plasmid-biofab-id": "pFAB616",
+    "dna-sequence": "TTCCCCATTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 60,
+    "biofab-id": "apFAB255",
+    "strength": 38.32,
+    "standard-deviation": 3.74,
+    "plasmid-biofab-id": "pFAB617",
+    "dna-sequence": "TTCACAATTAATCATCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 61,
+    "biofab-id": "apFAB256",
+    "strength": 49.71,
+    "standard-deviation": 5.43,
+    "plasmid-biofab-id": "pFAB618",
+    "dna-sequence": "TTTTTTATTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 62,
+    "biofab-id": "apFAB257",
+    "strength": 75.39,
+    "standard-deviation": 12.92,
+    "plasmid-biofab-id": "pFAB619",
+    "dna-sequence": "TTCCAAGTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 63,
+    "biofab-id": "apFAB258",
+    "strength": 39.55,
+    "standard-deviation": 5.52,
+    "plasmid-biofab-id": "pFAB620",
+    "dna-sequence": "TTGACAATTAATCATCCGGCTCCTAGTTTCTGTGGA"
+  },
+  {
+    "db-id": 64,
+    "biofab-id": "apFAB259",
+    "strength": 95.97,
+    "standard-deviation": 10.34,
+    "plasmid-biofab-id": "pFAB621",
+    "dna-sequence": "TTCACACTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 65,
+    "biofab-id": "apFAB260",
+    "strength": 99.29,
+    "standard-deviation": 7.09,
+    "plasmid-biofab-id": "pFAB622",
+    "dna-sequence": "TTTACTGTTAATCATCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 66,
+    "biofab-id": "apFAB261",
+    "strength": 47.13,
+    "standard-deviation": 5.58,
+    "plasmid-biofab-id": "pFAB623",
+    "dna-sequence": "TTCCCACTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 67,
+    "biofab-id": "apFAB262",
+    "strength": 65.83,
+    "standard-deviation": 5.28,
+    "plasmid-biofab-id": "pFAB624",
+    "dna-sequence": "TTTCACATTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 68,
+    "biofab-id": "apFAB263",
+    "strength": 70.05,
+    "standard-deviation": 8.06,
+    "plasmid-biofab-id": "pFAB625",
+    "dna-sequence": "TTCCCAGTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 69,
+    "biofab-id": "apFAB264",
+    "strength": 48.8,
+    "standard-deviation": 6.71,
+    "plasmid-biofab-id": "pFAB626",
+    "dna-sequence": "TTTATCTTTAATCATCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 70,
+    "biofab-id": "apFAB265",
+    "strength": 63.55,
+    "standard-deviation": 4.72,
+    "plasmid-biofab-id": "pFAB627",
+    "dna-sequence": "TTGACTATTAATCATCGGCTCATCCATTATGTGGA"
+  },
+  {
+    "db-id": 71,
+    "biofab-id": "apFAB266",
+    "strength": 56.78,
+    "standard-deviation": 4.97,
+    "plasmid-biofab-id": "pFAB628",
+    "dna-sequence": "TTGACAATTAATCATCGGCTCTTAGGCTATGTGGA"
+  },
+  {
+    "db-id": 72,
+    "biofab-id": "apFAB267",
+    "strength": 74.39,
+    "standard-deviation": 5.17,
+    "plasmid-biofab-id": "pFAB650",
+    "dna-sequence": "TTGACAATTAATCATCCGGCTCGTAGGGTCTGTGGA"
+  },
+  {
+    "db-id": 73,
+    "biofab-id": "apFAB268",
+    "strength": 38.05,
+    "standard-deviation": 1.59,
+    "plasmid-biofab-id": "pFAB630",
+    "dna-sequence": "TTGACAATTAATCATCCGGCTCATAGCGTGTGTGGA"
+  },
+  {
+    "db-id": 74,
+    "biofab-id": "apFAB270",
+    "strength": 55.67,
+    "standard-deviation": 11.06,
+    "plasmid-biofab-id": "pFAB632",
+    "dna-sequence": "TTGACAATTAATCATCGGCTCATAAAGTGTGTGGA"
+  },
+  {
+    "db-id": 75,
+    "biofab-id": "apFAB271",
+    "strength": 59.33,
+    "standard-deviation": 5.54,
+    "plasmid-biofab-id": "pFAB633",
+    "dna-sequence": "TTGACAATTAATCATCCGGCTCTTAGCGTGTGTGGA"
+  },
+  {
+    "db-id": 76,
+    "biofab-id": "apFAB272",
+    "strength": 45.89,
+    "standard-deviation": 1.36,
+    "plasmid-biofab-id": "pFAB634",
+    "dna-sequence": "TTGACAATTAATCATCGGCTCGTAGAGTTTGTGGA"
+  },
+  {
+    "db-id": 77,
+    "biofab-id": "apFAB273",
+    "strength": 128.84,
+    "standard-deviation": 14.69,
+    "plasmid-biofab-id": "pFAB635",
+    "dna-sequence": "TTCAAATTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 78,
+    "biofab-id": "apFAB274",
+    "strength": 44.9,
+    "standard-deviation": 6.14,
+    "plasmid-biofab-id": "pFAB636",
+    "dna-sequence": "TTCCAATTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 79,
+    "biofab-id": "apFAB276",
+    "strength": 138.28,
+    "standard-deviation": 10.46,
+    "plasmid-biofab-id": "pFAB638",
+    "dna-sequence": "TTGTCTATTAATCATCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 80,
+    "biofab-id": "apFAB278",
+    "strength": 58.41,
+    "standard-deviation": 2.54,
+    "plasmid-biofab-id": "pFAB640",
+    "dna-sequence": "TTTGCGGTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 81,
+    "biofab-id": "apFAB279",
+    "strength": 145.82,
+    "standard-deviation": 25.47,
+    "plasmid-biofab-id": "pFAB641",
+    "dna-sequence": "TTGTTCTTTAATCATCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 82,
+    "biofab-id": "apFAB280",
+    "strength": 57.4,
+    "standard-deviation": 9.07,
+    "plasmid-biofab-id": "pFAB642",
+    "dna-sequence": "TTTAACATTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 83,
+    "biofab-id": "apFAB281",
+    "strength": 139.88,
+    "standard-deviation": 16.76,
+    "plasmid-biofab-id": "pFAB643",
+    "dna-sequence": "TTCATTTTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 84,
+    "biofab-id": "apFAB282",
+    "strength": 105.12,
+    "standard-deviation": 8.88,
+    "plasmid-biofab-id": "pFAB644",
+    "dna-sequence": "TTGGAACTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 85,
+    "biofab-id": "apFAB284",
+    "strength": 77.82,
+    "standard-deviation": 0.44,
+    "plasmid-biofab-id": "pFAB646",
+    "dna-sequence": "TTGACAATTAATCATCCGGCTCATAAGTTTTGTGGA"
+  },
+  {
+    "db-id": 86,
+    "biofab-id": "apFAB285",
+    "strength": 76.92,
+    "standard-deviation": 4.97,
+    "plasmid-biofab-id": "pFAB647",
+    "dna-sequence": "TTGACAATTAATCATCCGGCTCCTAGCCTCTGTGGA"
+  },
+  {
+    "db-id": 87,
+    "biofab-id": "apFAB286",
+    "strength": 76.12,
+    "standard-deviation": 3.58,
+    "plasmid-biofab-id": "pFAB648",
+    "dna-sequence": "TTGACAATTAATCATCCGGCTCTTAGTTTTTGTGGA"
+  },
+  {
+    "db-id": 88,
+    "biofab-id": "apFAB287",
+    "strength": 52.53,
+    "standard-deviation": 1.88,
+    "plasmid-biofab-id": "pFAB649",
+    "dna-sequence": "TTGACAATTAATCATCCGGCTCCTAGGGTTTGTGGA"
+  },
+  {
+    "db-id": 89,
+    "biofab-id": "apFAB293",
+    "strength": 98.98,
+    "standard-deviation": 11.41,
+    "plasmid-biofab-id": "pFAB655",
+    "dna-sequence": "TTGACAATTAATCATCCGGCTCTTAGGTTGTGTGGA"
+  },
+  {
+    "db-id": 90,
+    "biofab-id": "apFAB294",
+    "strength": 0.21,
+    "standard-deviation": -0.06,
+    "plasmid-biofab-id": "pFAB656",
+    "dna-sequence": "TTCCTGGTTAATCATCCGGCTCATAAAATTTGTGGA"
+  },
+  {
+    "db-id": 91,
+    "biofab-id": "apFAB295",
+    "strength": 252.47,
+    "standard-deviation": 18.74,
+    "plasmid-biofab-id": "pFAB657",
+    "dna-sequence": "TTGCCTCTTAATCATCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 92,
+    "biofab-id": "apFAB296",
+    "strength": 277.56,
+    "standard-deviation": 35.86,
+    "plasmid-biofab-id": "pFAB658",
+    "dna-sequence": "TTCACTTTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 93,
+    "biofab-id": "apFAB297",
+    "strength": 339.75,
+    "standard-deviation": 79.2,
+    "plasmid-biofab-id": "pFAB659",
+    "dna-sequence": "TTGAGCTTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 94,
+    "biofab-id": "apFAB298",
+    "strength": 327.52,
+    "standard-deviation": 39.88,
+    "plasmid-biofab-id": "pFAB660",
+    "dna-sequence": "TTGCGGCTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 95,
+    "biofab-id": "apFAB299",
+    "strength": 203.95,
+    "standard-deviation": 35.03,
+    "plasmid-biofab-id": "pFAB661",
+    "dna-sequence": "TTTCAATTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 96,
+    "biofab-id": "apFAB300",
+    "strength": 246.62,
+    "standard-deviation": 20.78,
+    "plasmid-biofab-id": "pFAB662",
+    "dna-sequence": "TTGCCGCTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 97,
+    "biofab-id": "apFAB301",
+    "strength": 338.31,
+    "standard-deviation": 23.39,
+    "plasmid-biofab-id": "pFAB663",
+    "dna-sequence": "TTTACGTTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 98,
+    "biofab-id": "apFAB302",
+    "strength": 342.55,
+    "standard-deviation": 19.28,
+    "plasmid-biofab-id": "pFAB664",
+    "dna-sequence": "TTCCCTTTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 99,
+    "biofab-id": "apFAB303",
+    "strength": 345.31,
+    "standard-deviation": 35.86,
+    "plasmid-biofab-id": "pFAB665",
+    "dna-sequence": "TTGAATCTTAATCATCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 100,
+    "biofab-id": "apFAB304",
+    "strength": 10.75,
+    "standard-deviation": 0.72,
+    "plasmid-biofab-id": "pFAB666",
+    "dna-sequence": "TTCGCCGTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 101,
+    "biofab-id": "apFAB305",
+    "strength": 164.05,
+    "standard-deviation": 19.36,
+    "plasmid-biofab-id": "pFAB667",
+    "dna-sequence": "TTGACAATTAATCATCCGGCTCGTAGGGTTTGTGGA"
+  },
+  {
+    "db-id": 102,
+    "biofab-id": "apFAB306",
+    "strength": 307.03,
+    "standard-deviation": 21.99,
+    "plasmid-biofab-id": "pFAB668",
+    "dna-sequence": "TTGACAATTAATCATCCGGCTCGTAGTGTTTGTGGA"
+  },
+  {
+    "db-id": 103,
+    "biofab-id": "apFAB307",
+    "strength": 283.99,
+    "standard-deviation": 15.25,
+    "plasmid-biofab-id": "pFAB669",
+    "dna-sequence": "TTGACAATTAATCATCCGGCTCATATCGTTTGTGGA"
+  },
+  {
+    "db-id": 104,
+    "biofab-id": "apFAB308",
+    "strength": 269.83,
+    "standard-deviation": 16.68,
+    "plasmid-biofab-id": "pFAB670",
+    "dna-sequence": "TTGACAATTAATCATCCGGCTCGTAGGTTATGTGGA"
+  },
+  {
+    "db-id": 105,
+    "biofab-id": "apFAB309",
+    "strength": 199.95,
+    "standard-deviation": 21.29,
+    "plasmid-biofab-id": "pFAB671",
+    "dna-sequence": "TTGACAATTAATCATCCGGCTCGTAGTGTCTGTGGA"
+  },
+  {
+    "db-id": 106,
+    "biofab-id": "apFAB310",
+    "strength": 156.73,
+    "standard-deviation": 20.22,
+    "plasmid-biofab-id": "pFAB672",
+    "dna-sequence": "TTGACAATTAATCATCCGGCTCCTATCTTCTGTGGA"
+  },
+  {
+    "db-id": 107,
+    "biofab-id": "apFAB311",
+    "strength": 155.52,
+    "standard-deviation": 23.36,
+    "plasmid-biofab-id": "pFAB673",
+    "dna-sequence": "TTGACAATTAATCATCCGGCTCGTAGGTTGTGTGGA"
+  },
+  {
+    "db-id": 108,
+    "biofab-id": "apFAB312",
+    "strength": 135.53,
+    "standard-deviation": 4.09,
+    "plasmid-biofab-id": "pFAB674",
+    "dna-sequence": "TTGACAATTAATCATCCGGCTCTTAGTGTTTGTGGA"
+  },
+  {
+    "db-id": 109,
+    "biofab-id": "apFAB313",
+    "strength": 160.29,
+    "standard-deviation": 4.03,
+    "plasmid-biofab-id": "pFAB675",
+    "dna-sequence": "TTGACAATTAATCATCCGGCTCTTAGGGTGTGTGGA"
+  },
+  {
+    "db-id": 110,
+    "biofab-id": "apFAB314",
+    "strength": 141.99,
+    "standard-deviation": 10.96,
+    "plasmid-biofab-id": "pFAB676",
+    "dna-sequence": "TTGACAATTAATCATCCGGCTCCTAAGTTGTGTGGA"
+  },
+  {
+    "db-id": 111,
+    "biofab-id": "apFAB315",
+    "strength": 25.64,
+    "standard-deviation": 3.36,
+    "plasmid-biofab-id": "pFAB677",
+    "dna-sequence": "TTGATACTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 112,
+    "biofab-id": "apFAB316",
+    "strength": 123.38,
+    "standard-deviation": 12.92,
+    "plasmid-biofab-id": "pFAB678",
+    "dna-sequence": "TTTACAATTAATCATCCGGCTCATATAGTATGTGGA"
+  },
+  {
+    "db-id": 113,
+    "biofab-id": "apFAB317",
+    "strength": 654.56,
+    "standard-deviation": 34.47,
+    "plasmid-biofab-id": "pFAB679",
+    "dna-sequence": "TTGATATTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 114,
+    "biofab-id": "apFAB318",
+    "strength": 12.6234,
+    "standard-deviation": 0.0290251,
+    "plasmid-biofab-id": "pFAB279",
+    "dna-sequence": "TTGACTATTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 115,
+    "biofab-id": "apFAB319",
+    "strength": 20.39,
+    "standard-deviation": 1.51,
+    "plasmid-biofab-id": "pFAB681",
+    "dna-sequence": "TTCCTGCTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 116,
+    "biofab-id": "apFAB321",
+    "strength": 557.04,
+    "standard-deviation": 14.51,
+    "plasmid-biofab-id": "pFAB683",
+    "dna-sequence": "TTGACAATTAATCATCCGGCTCGTAACTTATGTGGA"
+  },
+  {
+    "db-id": 117,
+    "biofab-id": "apFAB322",
+    "strength": 516.83,
+    "standard-deviation": 34.14,
+    "plasmid-biofab-id": "pFAB684",
+    "dna-sequence": "TTGCGTATTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 118,
+    "biofab-id": "apFAB323",
+    "strength": 611.2,
+    "standard-deviation": 60.72,
+    "plasmid-biofab-id": "pFAB685",
+    "dna-sequence": "TTGTATTTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 119,
+    "biofab-id": "apFAB324",
+    "strength": 12.77,
+    "standard-deviation": 2.58,
+    "plasmid-biofab-id": "pFAB686",
+    "dna-sequence": "TTGACAATTAATCATCGGCTCTTAGGCTTTGTGGA"
+  },
+  {
+    "db-id": 120,
+    "biofab-id": "apFAB325",
+    "strength": 2.24,
+    "standard-deviation": 0.26,
+    "plasmid-biofab-id": "pFAB687",
+    "dna-sequence": "TTGACAATTAATATCCGGCTCGTAGCGTCTGTGGA"
+  },
+  {
+    "db-id": 121,
+    "biofab-id": "apFAB326",
+    "strength": 33.51,
+    "standard-deviation": 4.71,
+    "plasmid-biofab-id": "pFAB688",
+    "dna-sequence": "TTCCACCTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 122,
+    "biofab-id": "apFAB327",
+    "strength": 0.75,
+    "standard-deviation": 0.1,
+    "plasmid-biofab-id": "pFAB689",
+    "dna-sequence": "TTTTGGTTTAATCATCCGGCTCCTACTCTGTGTGGA"
+  },
+  {
+    "db-id": 123,
+    "biofab-id": "apFAB329",
+    "strength": 33.21,
+    "standard-deviation": 4.88,
+    "plasmid-biofab-id": "pFAB691",
+    "dna-sequence": "TTGTTCCTTAATCATCCGGCTCGTATCATATGTGGA"
+  },
+  {
+    "db-id": 124,
+    "biofab-id": "apFAB331",
+    "strength": 11.14,
+    "standard-deviation": 2.46,
+    "plasmid-biofab-id": "pFAB693",
+    "dna-sequence": "TTGCGCCTTAATCATCCGGCTCGGAGACTTTGTGGA"
+  },
+  {
+    "db-id": 125,
+    "biofab-id": "apFAB332",
+    "strength": 32.73,
+    "standard-deviation": 4.28,
+    "plasmid-biofab-id": "pFAB694",
+    "dna-sequence": "TTCGCAATTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 126,
+    "biofab-id": "apFAB333",
+    "strength": 34.24,
+    "standard-deviation": 5.08,
+    "plasmid-biofab-id": "pFAB695",
+    "dna-sequence": "TTCCCCCTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 127,
+    "biofab-id": "apFAB334",
+    "strength": 21.08,
+    "standard-deviation": 3.76,
+    "plasmid-biofab-id": "pFAB696",
+    "dna-sequence": "TTACAAGTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 128,
+    "biofab-id": "apFAB335",
+    "strength": 21.55,
+    "standard-deviation": 2.76,
+    "plasmid-biofab-id": "pFAB697",
+    "dna-sequence": "TTACTTCTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 129,
+    "biofab-id": "apFAB337",
+    "strength": 48.57,
+    "standard-deviation": 5.75,
+    "plasmid-biofab-id": "pFAB699",
+    "dna-sequence": "TTACAACTTAATCATCCGGCTCGTATAATGTGTGGA"
+  },
+  {
+    "db-id": 130,
+    "biofab-id": "apFAB338",
+    "strength": 615.44,
+    "standard-deviation": 87.51,
+    "plasmid-biofab-id": "pFAB700",
+    "dna-sequence": "TTGACAATTAATCATCCGGCTCCTAGGATGTGTGGA"
+  },
+  {
+    "db-id": 131,
+    "biofab-id": "apFAB339",
+    "strength": 580.23,
+    "standard-deviation": 109.8,
+    "plasmid-biofab-id": "pFAB701",
+    "dna-sequence": "TTGACAATTAATCATCCGGCTCGTAATTTATGTGGA"
+  },
+  {
+    "db-id": 132,
+    "biofab-id": "apFAB340",
+    "strength": 538.51,
+    "standard-deviation": 88.97,
+    "plasmid-biofab-id": "pFAB702",
+    "dna-sequence": "TTGACAATTAATCATCCGGCTCGTAGTATGTGTGGA"
+  },
+  {
+    "db-id": 133,
+    "biofab-id": "apFAB341",
+    "strength": 668.45,
+    "standard-deviation": 126.17,
+    "plasmid-biofab-id": "pFAB703",
+    "dna-sequence": "TTGACAATTAATCATCCGGCTCGTAATATGTGTGGA"
+  },
+  {
+    "db-id": 134,
+    "biofab-id": "apFAB342",
+    "strength": 740.35,
+    "standard-deviation": 161.47,
+    "plasmid-biofab-id": "pFAB704",
+    "dna-sequence": "TTGACAATTAATCATCCGGCTCATAAAATTTGTGGA"
+  },
+  {
+    "db-id": 135,
+    "biofab-id": "apFAB343",
+    "strength": 33.5,
+    "standard-deviation": 2.95,
+    "plasmid-biofab-id": "pFAB705",
+    "dna-sequence": "TTGACAATTAATCATCCGGCTCATAGCGTCTGTGGA"
+  },
+  {
+    "db-id": 136,
+    "biofab-id": "apFAB345",
+    "strength": 714.53,
+    "standard-deviation": 121.07,
+    "plasmid-biofab-id": "pFAB707",
+    "dna-sequence": "TTGACAATTAATCATCCGGCTCGTAGAGTATGTGGA"
+  },
+  {
+    "db-id": 137,
+    "biofab-id": "apFAB346",
+    "strength": 466.88,
+    "standard-deviation": 48.38,
+    "plasmid-biofab-id": "pFAB708",
+    "dna-sequence": "TTGACAATTAATCATCCGGCTCGTAATGTTTGTGGA"
+  },
+  {
+    "db-id": 138,
+    "biofab-id": "apFAB347",
+    "strength": 738.4,
+    "standard-deviation": 96.47,
+    "plasmid-biofab-id": "pFAB709",
+    "dna-sequence": "TTGACAATTAATCATCCGGCTCTTAATATGTGTGGA"
+  }
+]}

@@ -6,10 +6,10 @@
  * 
  */
 
-Ext.define('PartPanel',
+Ext.define('GeneticPartDatasheet',
 {
     extend: 'Ext.panel.Panel',
-    title: 'Part',
+    title: 'Genetic Part Datasheet',
     layout: 'absolute',
     closable: true,
     autoScroll: true,
@@ -192,33 +192,33 @@ Ext.define('PartPanel',
             
             this.partRecord = partRecord;
             this.parts = parts;
-            biofabID = partRecord.get('id');
+            biofabID = partRecord.get('biofab-id');
             this.setTitle(biofabID);
             dnaSequence = partRecord.get('dna-sequence');
             this.partDesignPanel.getComponent('partDesignToolbar').getComponent('partDesignLabel').setText('<b>DNA Sequence for ' + biofabID + '</b>');
             this.partDesignPanel.getComponent('sequenceTextArea').setValue(dnaSequence);
             var collectionId = this.partRecord.get('collection-id');
-            this.constructId = this.partRecord.get('plasmid-id');
+            this.constructId = this.partRecord.get('plasmid-biofab-id');
             
             
             //TODO Deal with null constructId
             // this.fetchConstructDesign(this.constructId);
 
             //Temporary patch till I fix the problem with the Pilot Project
-            if(collectionId !== 1)
-            {
-                this.generateBarChart(this.partRecord, this.parts);
-            }
-            else
-            {
-                this.performancePanel.add(
-                    {
-                        xtype: 'label',
-                        text: 'Performance data for Pilot Project parts will be available in an upcoming release of the Data Access Client.'
-                    }
-                );
-                //this.performancePanel.doLayout();
-            }
+            // if(collectionId !== 1)
+            // {
+            //     this.generateBarChart(this.partRecord, this.parts);
+            // }
+            // else
+            // {
+            //     this.performancePanel.add(
+            //         {
+            //             xtype: 'label',
+            //             text: 'Performance data for Pilot Project parts will be available in an upcoming release of the Data Access Client.'
+            //         }
+            //     );
+            //     //this.performancePanel.doLayout();
+            // }
     },
     
     fetchConstructDesign:function(constructID)

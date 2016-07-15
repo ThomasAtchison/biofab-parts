@@ -167,7 +167,7 @@ Ext.define('TerminatorLibraryPanel',
                         {
                             type: 'column',
                             axis: 'left',
-                            xField: 'biofabId',
+                            xField: 'biofab-id',
                             yField: 'value',
                             highlight: false,
                             style: {opacity: 1.0},
@@ -177,7 +177,7 @@ Ext.define('TerminatorLibraryPanel',
                               width: 120,
                               height: 28,
                               renderer: function(storeItem, item) {
-                                this.setTitle('Part: ' + storeItem.get('biofabId'));
+                                this.setTitle('Part: ' + storeItem.get('biofab-id'));
                               }
                             }
                         }

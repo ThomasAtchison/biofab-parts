@@ -97,22 +97,22 @@ Ext.define('ElectronicDatasheetViewport', {
                                     xtype: 'tbtext',
                                     id: "partsToolbarText",
                                     style: {fontWeight:'bold'},
-                                    text: 'Promoters'
+                                    text: 'Modular Promoter Library'
                                 },
                                 {
                                     xtype: 'tbfill'
-                                },
+                                }//,
                                 // {
                                 //     xtype: 'tbseparator'
                                 // },
-                                {
-                                    xtype: 'button',
-                                    text: 'Export',
-                                    tooltip: 'Export the genetic parts in JSON format',
-                                    id: 'partsExportButton',
-                                    handler: this.partsExportButtonHandler,
-                                    hidden: true
-                                }
+                                // {
+                                //     xtype: 'button',
+                                //     text: 'Export',
+                                //     tooltip: 'Export the genetic parts in JSON format',
+                                //     id: 'partsExportButton',
+                                //     handler: this.partsExportButtonHandler,
+                                //     hidden: true
+                                // }
                             ]
                         },
                         items:[
@@ -120,21 +120,21 @@ Ext.define('ElectronicDatasheetViewport', {
                                 xtype: 'gridpanel',
                                 id: 'promoterGridPanel',
                                 title: '',
-                                store: promoterStore, 
+                                store: modularPromoterStore, 
                                 columnLines: true,
                                 hidden: false,
                                 columns: [
                                     {
                                         xtype: 'gridcolumn',
-                                        dataIndex: 'id',
-                                        header: 'Promoter',
+                                        dataIndex: 'biofab-id',
+                                        header: 'BIOFAB ID',
                                         sortable: true,
                                         width: 125,
                                         editable: false
                                     },
                                     {
                                         xtype: 'numbercolumn',
-                                        dataIndex: 'mean-fluorescence-per-cell',
+                                        dataIndex: 'strength',
                                         header: 'Strength',
                                         sortable: true,
                                         width: 125,
@@ -154,12 +154,43 @@ Ext.define('ElectronicDatasheetViewport', {
                                     }
                                 ]
                             },
-                             {
-                                xtype: 'panel',
+                            {
+                                xtype: 'gridpanel',
                                 id: 'randomPromoterGridPanel',
                                 title: '',
-                                hidden: true,
-                                html: '<b>The Random Promoter Library will be listed in an upcoming release.</b>'
+                                store: randomPromoterStore, 
+                                columnLines: true,
+                                hidden: false,
+                                columns: [
+                                    {
+                                        xtype: 'gridcolumn',
+                                        dataIndex: 'biofab-id',
+                                        header: 'BIOFAB ID',
+                                        sortable: true,
+                                        width: 125,
+                                        editable: false
+                                    },
+                                    {
+                                        xtype: 'numbercolumn',
+                                        dataIndex: 'strength',
+                                        header: 'Strength',
+                                        sortable: true,
+                                        width: 125,
+                                        align: 'left',
+                                        editable: false,
+                                        format: '0,000'
+                                    },
+                                    {
+                                        xtype: 'numbercolumn',
+                                        dataIndex: 'standard-deviation',
+                                        header: 'Standard Deviation',
+                                        sortable: true,
+                                        width: 125,
+                                        align: 'left',
+                                        editable: false,
+                                        format: '0,000.00'
+                                    }
+                                ]
                             },
                             {
                                 xtype: 'panel',
@@ -180,8 +211,8 @@ Ext.define('ElectronicDatasheetViewport', {
                                 columns: [
                                     {
                                         xtype: 'gridcolumn',
-                                        dataIndex: 'id',
-                                        header: 'Terminator',
+                                        dataIndex: 'biofab-id',
+                                        header: 'BIOFAB ID',
                                         sortable: false,
                                         width: 125,
                                         editable: false
@@ -237,18 +268,18 @@ Ext.define('ElectronicDatasheetViewport', {
         this.libraryGridPanel = Ext.ComponentManager.get('libraryGridPanel');
         var libraryGridSelectionModel = this.libraryGridPanel.getSelectionModel();
         libraryGridSelectionModel.on('rowselect', this.libraryGridRowSelectHandler, this);
-        libraryGridSelectionModel.on('rowselect', this.libraryGridRowSelectHandler, this);
         
 	    this.promoterGridPanel = Ext.ComponentManager.get('promoterGridPanel');
         var promoterGridSelectionModel = this.promoterGridPanel.getSelectionModel();
 	    promoterGridSelectionModel.on('rowselect', this.promoterGridRowSelectHandler, this);
+
+        Ext.ComponentManager.get('randomPromoterGridPanel').getSelectionModel().on('rowselect', this.randomPromoterGridRowSelectHandler, this);
             
         this.terminatorGridPanel = Ext.ComponentManager.get('terminatorGridPanel');
         var terminatorGridSelectionModel = this.terminatorGridPanel.getSelectionModel();
 	    terminatorGridSelectionModel.on('rowselect', this.terminatorGridRowSelectHandler, this);
         
         this.partsToolbarText = Ext.ComponentManager.get('partsToolbarText');
-        
         this.infoTabPanel = Ext.ComponentManager.get('infoTabPanel');
         
         // libraryGridSelectionModel.select(0);
@@ -340,10 +371,10 @@ Ext.define('ElectronicDatasheetViewport', {
 
         showPartPanel: function(partRecord)
         {
-            var panel = new PartPanel();
-            this.infoTabPanel.add(panel);
-            this.infoTabPanel.setActiveTab(panel);
-            panel.showInfo(partRecord, this.parts);
+            var datasheet = new GeneticPartDatasheet();
+            this.infoTabPanel.add(datasheet);
+            this.infoTabPanel.setActiveTab(datasheet);
+            datasheet.showInfo(partRecord, this.parts);
         },
         
 //        retrieveGecMeasurement: function(part)
@@ -447,17 +478,7 @@ Ext.define('ElectronicDatasheetViewport', {
         var store;
         
         if(id === 1)
-        {
-            store = this.promoterGridPanel.getStore();
-            // store.clearFilter(false);
-            // store.filter([
-            // {
-            //     property     : 'collection-id',
-            //     value        : id,
-            //     anyMatch     : false,
-            //     exactMatch   : true
-            // }]);
-            
+        {   
             Ext.ComponentManager.get('randomPromoterGridPanel').hide();
             Ext.ComponentManager.get('translationInitiationElementGridPanel').hide();
             Ext.ComponentManager.get('terminatorGridPanel').hide();
@@ -472,40 +493,28 @@ Ext.define('ElectronicDatasheetViewport', {
             }
             
             datasheet.displayInformation(record, store);
-            
-            // Ext.Msg.alert('Modular Promoter Library', 'The Modular Promoter Library datasheet will be provided in an upcoming release.');
         }
 
-        if(id === 2)
-        {
-            // panel = Ext.ComponentManager.get('randomPromoterLibraryPanel');
-            
-            // if(panel === undefined)
-            // {
-            //     panel = new RandomPromoterLibraryPanel();
-            //     this.infoTabPanel.add(panel);
-            // }
-            
-            // Ext.Msg.alert('Random Promoter Library', 'The Random Promoters will be added in an upcoming release.');
-            
+        if(id === 2){
             Ext.ComponentManager.get('promoterGridPanel').hide();
             Ext.ComponentManager.get('translationInitiationElementGridPanel').hide();
             Ext.ComponentManager.get('terminatorGridPanel').hide();
             Ext.ComponentManager.get('randomPromoterGridPanel').show();
+
+            // datasheet = Ext.ComponentManager.get('randomPromoterLibraryDatasheet');
+            
+            // if(datasheet === undefined) {
+            //     datasheet = new RandomPromoterLibraryDatasheet();
+            //     this.infoTabPanel.add(datasheet);
+            //     datasheet.displayInformation(record);
+            // }
+            // else {
+            //     datasheet.displayInformation(record);
+            // }
         }
         
         if(id === 3)
-        {
-            // panel = Ext.ComponentManager.get('terminatorLibraryPanel');
-            
-            // if(panel === undefined)
-            // {
-            //     panel = new TerminatorLibraryPanel();
-            //     this.infoTabPanel.add(panel);
-            // }
-            
-            // Ext.Msg.alert('Translation Initiation Element Library', 'The Translation Initiation Elements will be added in an upcoming release.');
-            
+        {    
             Ext.ComponentManager.get('promoterGridPanel').hide();
             Ext.ComponentManager.get('randomPromoterGridPanel').hide();
             Ext.ComponentManager.get('terminatorGridPanel').hide();
@@ -514,26 +523,6 @@ Ext.define('ElectronicDatasheetViewport', {
 
         if(id === 4)
         {
-            // var terminatorStore = this.terminatorGridPanel.getStore();
-            // terminatorStore.clearFilter(false);
-            // terminatorStore.filter([
-            // {
-            //     property     : 'collectionId',
-            //     value        : id,
-            //     anyMatch     : false,
-            //     exactMatch   : true
-            // }]);
-            
-            // var panel = Ext.ComponentManager.get('terminatorLibraryPanel');
-            
-            // if(panel === undefined)
-            // {
-            //     panel = new TerminatorLibraryPanel();
-            //     this.infoTabPanel.add(panel);
-            // }
-            
-            // Ext.Msg.alert('Terminator Library', 'The Terminator Library will be added in an upcoming release.');
-            
             Ext.ComponentManager.get('promoterGridPanel').hide();
             Ext.ComponentManager.get('randomPromoterGridPanel').hide();
             Ext.ComponentManager.get('translationInitiationElementGridPanel').hide();
@@ -546,48 +535,56 @@ Ext.define('ElectronicDatasheetViewport', {
         this.partsToolbarText.setText(collectionName);
     },
     
+    // promoterGridRowSelectHandler: function(selectModel, rowIndex, record)
+    // {
+    //    var partID = record.get("displayId");
+    //    var description = record.get('description');
+    //    var relationRecord = null;
+    //    var constructID = null;
+    //    var constructRecord = null;
+    //    var constructRecords = null;
+    //    var constructRecordsForDisplay = [];
+    //    var relationPartID = null;
+    //    var relationsCount = this.constructPartStore.getCount();
+
+    //    for(var i = 0; i < relationsCount; i += 1)
+    //    {
+    //        relationRecord = this.constructPartStore.getAt(i);
+    //        relationPartID = relationRecord.get("partID");
+
+    //        if(relationPartID.toUpperCase() === partID.toUpperCase())
+    //        {
+    //                constructID = relationRecord.get("constructID");
+    //                constructRecords = this.constructStore.query('biofab_id', new RegExp(constructID), false, false, true);
+    //                constructRecord = constructRecords.itemAt(0);
+
+    //                if(constructRecord !== null && constructRecord !== undefined)
+    //                {
+    //                    constructRecordsForDisplay.push(constructRecord);
+    //                }
+    //        }
+    //    }
+
+    //    if(constructRecordsForDisplay.length > 0)
+    //    {
+    //        this.constructsGridPanel.getStore().removeAll();
+    //        this.constructsGridPanel.getStore().add(constructRecordsForDisplay);
+    //        this.constructsLabel.setText('Constructs with ' + partID);
+    //    }
+    //    else
+    //    {
+    //        Ext.Msg.alert('Data Access Client', 'No construct has ' + description);
+    //    }
+    // },
+
     promoterGridRowSelectHandler: function(selectModel, rowIndex, record)
     {
-//        var partID = record.get("displayId");
-//        var description = record.get('description');
-//        var relationRecord = null;
-//        var constructID = null;
-//        var constructRecord = null;
-//        var constructRecords = null;
-//        var constructRecordsForDisplay = [];
-//        var relationPartID = null;
-//        var relationsCount = this.constructPartStore.getCount();
-
-//        for(var i = 0; i < relationsCount; i += 1)
-//        {
-//            relationRecord = this.constructPartStore.getAt(i);
-//            relationPartID = relationRecord.get("partID");
-//
-//            if(relationPartID.toUpperCase() === partID.toUpperCase())
-//            {
-//                    constructID = relationRecord.get("constructID");
-//                    constructRecords = this.constructStore.query('biofab_id', new RegExp(constructID), false, false, true);
-//                    constructRecord = constructRecords.itemAt(0);
-//
-//                    if(constructRecord !== null && constructRecord !== undefined)
-//                    {
-//                        constructRecordsForDisplay.push(constructRecord);
-//                    }
-//            }
-//        }
-//
-//        if(constructRecordsForDisplay.length > 0)
-//        {
-//            this.constructsGridPanel.getStore().removeAll();
-//            this.constructsGridPanel.getStore().add(constructRecordsForDisplay);
-//            this.constructsLabel.setText('Constructs with ' + partID);
-//        }
-//        else
-//        {
-//            Ext.Msg.alert('Data Access Client', 'No construct has ' + description);
-//        }
-
         this.showPartPanel(record); 
+    },
+
+    randomPromoterGridRowSelectHandler: function(selectModel, rowIndex, record)
+    {
+        this.showPartPanel(record);
     },
     
     terminatorGridRowSelectHandler: function(selectModel, rowIndex, record)

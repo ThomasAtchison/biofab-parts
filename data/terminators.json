@@ -3,7 +3,7 @@
 {
 "db-id":"1",
 "collection-id":"4",
-"id":"apFAB352",
+"biofab-id":"apFAB352",
 "description":"REF lambda_tR2_S",
 "plasmid-id":"pFAB826",
 "strain-id":"sFAB843",
@@ -14,7 +14,7 @@
 {
 "db-id":"2",
 "collection-id":"4",
-"id":"apFAB353",
+"biofab-id":"apFAB353",
 "description":"spacer50GC0.23",
 "plasmid-id":"pFAB891",
 "strain-id":"sFAB882",
@@ -25,7 +25,7 @@
 {
 "db-id":"3",
 "collection-id":"4",
-"id":"apFAB354",
+"biofab-id":"apFAB354",
 "description":"BBa_B1002_T_LSvar",
 "plasmid-id":"pFAB829",
 "strain-id":"sFAB846",
@@ -36,7 +36,7 @@
 {
 "db-id":"4",
 "collection-id":"4",
-"id":"apFAB355",
+"biofab-id":"apFAB355",
 "description":"spacer80GC0.3",
 "plasmid-id":"pFAB886",
 "strain-id":"sFAB881",
@@ -47,7 +47,7 @@
 {
 "db-id":"5",
 "collection-id":"4",
-"id":"apFAB356",
+"biofab-id":"apFAB356",
 "description":"attCaadA7",
 "plasmid-id":"pFAB818",
 "strain-id":"sFAB836",
@@ -58,7 +58,7 @@
 {
 "db-id":"6",
 "collection-id":"4",
-"id":"apFAB357",
+"biofab-id":"apFAB357",
 "description":"trp_att_L126_LST",
 "plasmid-id":"pFAB888",
 "strain-id":"sFAB874",
@@ -69,7 +69,7 @@
 {
 "db-id":"7",
 "collection-id":"4",
-"id":"apFAB358",
+"biofab-id":"apFAB358",
 "description":"BBa_B1002_T_Lvar",
 "plasmid-id":"pFAB828",
 "strain-id":"sFAB845",
@@ -80,7 +80,7 @@
 {
 "db-id":"8",
 "collection-id":"4",
-"id":"apFAB359",
+"biofab-id":"apFAB359",
 "description":"lambda_tR2_L",
 "plasmid-id":"pFAB827",
 "strain-id":"sFAB844",
@@ -91,7 +91,7 @@
 {
 "db-id":"9",
 "collection-id":"4",
-"id":"apFAB360",
+"biofab-id":"apFAB360",
 "description":"spacer40GC0.32",
 "plasmid-id":"pFAB892",
 "strain-id":"sFAB883",
@@ -102,7 +102,7 @@
 {
 "db-id":"10",
 "collection-id":"4",
-"id":"apFAB361",
+"biofab-id":"apFAB361",
 "description":"amyA_T_S",
 "plasmid-id":"pFAB862",
 "strain-id":"sFAB854",
@@ -113,7 +113,7 @@
 {
 "db-id":"11",
 "collection-id":"4",
-"id":"apFAB362",
+"biofab-id":"apFAB362",
 "description":"spacer80GC0.7",
 "plasmid-id":"pFAB884",
 "strain-id":"sFAB879",
@@ -124,7 +124,7 @@
 {
 "db-id":"12",
 "collection-id":"4",
-"id":"apFAB363",
+"biofab-id":"apFAB363",
 "description":"his_T_var_L",
 "plasmid-id":"pFAB860",
 "strain-id":"sFAB852",
@@ -135,7 +135,7 @@
 {
 "db-id":"13",
 "collection-id":"4",
-"id":"apFAB364",
+"biofab-id":"apFAB364",
 "description":"tn10_tetA/tetC_T",
 "plasmid-id":"pFAB820",
 "strain-id":"sFAB838",
@@ -146,7 +146,7 @@
 {
 "db-id":"14",
 "collection-id":"4",
-"id":"apFAB365",
+"biofab-id":"apFAB365",
 "description":"amyA_T_L2",
 "plasmid-id":"pFAB863",
 "strain-id":"sFAB855",
@@ -157,7 +157,7 @@
 {
 "db-id":"15",
 "collection-id":"4",
-"id":"apFAB366",
+"biofab-id":"apFAB366",
 "description":"amyA_T",
 "plasmid-id":"pFAB817",
 "strain-id":"sFAB835",
@@ -168,7 +168,7 @@
 {
 "db-id":"16",
 "collection-id":"4",
-"id":"apFAB367",
+"biofab-id":"apFAB367",
 "description":"trp_att_1419",
 "plasmid-id":"pFAB802",
 "strain-id":"sFAB820",
@@ -179,7 +179,7 @@
 {
 "db-id":"17",
 "collection-id":"4",
-"id":"apFAB368",
+"biofab-id":"apFAB368",
 "description":"his_T",
 "plasmid-id":"pFAB812",
 "strain-id":"sFAB830",
@@ -190,7 +190,7 @@
 {
 "db-id":"18",
 "collection-id":"4",
-"id":"apFAB369",
+"biofab-id":"apFAB369",
 "description":"amyA_T_L",
 "plasmid-id":"pFAB861",
 "strain-id":"sFAB853",
@@ -201,7 +201,7 @@
 {
 "db-id":"19",
 "collection-id":"4",
-"id":"apFAB370",
+"biofab-id":"apFAB370",
 "description":"his_T_var",
 "plasmid-id":"pFAB813",
 "strain-id":"sFAB831",
@@ -212,7 +212,7 @@
 {
 "db-id":"20",
 "collection-id":"4",
-"id":"apFAB371",
+"biofab-id":"apFAB371",
 "description":"crp_T",
 "plasmid-id":"pFAB799",
 "strain-id":"sFAB817",
@@ -223,7 +223,7 @@
 {
 "db-id":"21",
 "collection-id":"4",
-"id":"apFAB372",
+"biofab-id":"apFAB372",
 "description":"lambda_tR2_1",
 "plasmid-id":"pFAB811",
 "strain-id":"sFAB829",
@@ -234,7 +234,7 @@
 {
 "db-id":"22",
 "collection-id":"4",
-"id":"apFAB373",
+"biofab-id":"apFAB373",
 "description":"tonB_T",
 "plasmid-id":"pFAB805",
 "strain-id":"sFAB823",
@@ -245,7 +245,7 @@
 {
 "db-id":"23",
 "collection-id":"4",
-"id":"apFAB374",
+"biofab-id":"apFAB374",
 "description":"T21_T",
 "plasmid-id":"pFAB814",
 "strain-id":"sFAB832",
@@ -256,7 +256,7 @@
 {
 "db-id":"24",
 "collection-id":"4",
-"id":"apFAB375",
+"biofab-id":"apFAB375",
 "description":"spacer80GC0.5",
 "plasmid-id":"pFAB885",
 "strain-id":"sFAB880",
@@ -267,7 +267,7 @@
 {
 "db-id":"25",
 "collection-id":"4",
-"id":"apFAB376",
+"biofab-id":"apFAB376",
 "description":"BBa_B1002_T",
 "plasmid-id":"pFAB821",
 "strain-id":"sFAB839",
@@ -278,7 +278,7 @@
 {
 "db-id":"26",
 "collection-id":"4",
-"id":"apFAB377",
+"biofab-id":"apFAB377",
 "description":"lambda_tR2",
 "plasmid-id":"pFAB806",
 "strain-id":"sFAB824",
@@ -289,7 +289,7 @@
 {
 "db-id":"27",
 "collection-id":"4",
-"id":"apFAB378",
+"biofab-id":"apFAB378",
 "description":"RNA_I_T",
 "plasmid-id":"pFAB807",
 "strain-id":"sFAB825",
@@ -300,7 +300,7 @@
 {
 "db-id":"28",
 "collection-id":"4",
-"id":"apFAB379",
+"biofab-id":"apFAB379",
 "description":"trp_att_L",
 "plasmid-id":"pFAB824",
 "strain-id":"sFAB841",
@@ -311,7 +311,7 @@
 {
 "db-id":"29",
 "collection-id":"4",
-"id":"apFAB380",
+"biofab-id":"apFAB380",
 "description":"trp_att_L126_L",
 "plasmid-id":"pFAB882",
 "strain-id":"sFAB873",
@@ -322,7 +322,7 @@
 {
 "db-id":"30",
 "collection-id":"4",
-"id":"apFAB381",
+"biofab-id":"apFAB381",
 "description":"T3_Te",
 "plasmid-id":"pFAB804",
 "strain-id":"sFAB822",
@@ -333,7 +333,7 @@
 {
 "db-id":"31",
 "collection-id":"4",
-"id":"apFAB382",
+"biofab-id":"apFAB382",
 "description":"trp_att",
 "plasmid-id":"pFAB800",
 "strain-id":"sFAB818",
@@ -344,7 +344,7 @@
 {
 "db-id":"32",
 "collection-id":"4",
-"id":"apFAB383",
+"biofab-id":"apFAB383",
 "description":"T7_Te",
 "plasmid-id":"pFAB803",
 "strain-id":"sFAB821",
@@ -355,7 +355,7 @@
 {
 "db-id":"33",
 "collection-id":"4",
-"id":"apFAB384",
+"biofab-id":"apFAB384",
 "description":"rrnA_T1",
 "plasmid-id":"pFAB809",
 "strain-id":"sFAB827",
@@ -366,7 +366,7 @@
 {
 "db-id":"34",
 "collection-id":"4",
-"id":"apFAB385",
+"biofab-id":"apFAB385",
 "description":"trp_att_L126",
 "plasmid-id":"pFAB801",
 "strain-id":"sFAB819",
@@ -377,7 +377,7 @@
 {
 "db-id":"35",
 "collection-id":"4",
-"id":"apFAB386",
+"biofab-id":"apFAB386",
 "description":"M13_central_T",
 "plasmid-id":"pFAB819",
 "strain-id":"sFAB837",
@@ -388,7 +388,7 @@
 {
 "db-id":"36",
 "collection-id":"4",
-"id":"apFAB387",
+"biofab-id":"apFAB387",
 "description":"rrnB_T1",
 "plasmid-id":"pFAB808",
 "strain-id":"sFAB826",
@@ -399,7 +399,7 @@
 {
 "db-id":"37",
 "collection-id":"4",
-"id":"apFAB388",
+"biofab-id":"apFAB388",
 "description":"BBa_B1006_T",
 "plasmid-id":"pFAB822",
 "strain-id":"sFAB840",
@@ -410,7 +410,7 @@
 {
 "db-id":"38",
 "collection-id":"4",
-"id":"apFAB389",
+"biofab-id":"apFAB389",
 "description":"rrnD_T1",
 "plasmid-id":"pFAB810",
 "strain-id":"sFAB828",
@@ -421,7 +421,7 @@
 {
 "db-id":"39",
 "collection-id":"4",
-"id":"apFAB390",
+"biofab-id":"apFAB390",
 "description":"ilvGEDA_T",
 "plasmid-id":"pFAB816",
 "strain-id":"sFAB834",
@@ -432,7 +432,7 @@
 {
 "db-id":"40",
 "collection-id":"4",
-"id":"apFAB391",
+"biofab-id":"apFAB391",
 "description":"rnpB_T1",
 "plasmid-id":"pFAB815",
 "strain-id":"sFAB833",

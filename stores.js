@@ -19,22 +19,22 @@ var libraryStore = new Ext.data.JsonStore({
     }
 });
 
-var promoterStore = new Ext.data.Store({
-    storeId: 'promoterStore',
+var modularPromoterStore = new Ext.data.Store({
+    storeId: 'modularPromoterStore',
     model: 'Promoter',
     autoLoad: true,
     proxy: {
         type: 'ajax',
-        url : WEB_SERVICE_BASE_URL + 'promoters.json',
+        url : WEB_SERVICE_BASE_URL + 'modular-promoters.json',
         reader: {
             type: 'json',
-            root: 'promoters',
+            root: 'modular-promoters',
             idProperty: 'db-id'
         }
     },
     sorters: [
         {
-            property : 'mean-fluorescence-per-cell',
+            property : 'strength',
             direction: 'DESC'
         }
     ]
@@ -56,6 +56,27 @@ var terminatorStore = new Ext.data.Store({
     sorters:[
         {
             property : 'termination-efficiency',
+            direction: 'DESC'
+        }
+    ]
+});
+
+var randomPromoterStore = new Ext.data.Store({
+    storeId: 'randomPromoterStore',
+    model: 'Promoter',
+    autoLoad: true,
+    proxy: {
+        type: 'ajax',
+        url : WEB_SERVICE_BASE_URL + 'random-promoters.json',
+        reader: {
+            type: 'json',
+            root: 'random-promoters',
+            idProperty: 'db-id'
+        }
+    },
+    sorters: [
+        {
+            property : 'strength',
             direction: 'DESC'
         }
     ]

@@ -193,11 +193,74 @@ Ext.define('ElectronicDatasheetViewport', {
                                 ]
                             },
                             {
-                                xtype: 'panel',
-                                id: 'translationInitiationElementGridPanel',
+                                xtype: 'gridpanel',
+                                id: 'tieGridPanel',
                                 title: '',
-                                hidden: true,
-                                html: '<b>The Translation Initiation Elements will be listed in an upcoming release.</b>'
+                                store: tieStore, 
+                                columnLines: true,
+                                hidden: false,
+                                columns: [
+                                    {
+                                        xtype: 'gridcolumn',
+                                        dataIndex: 'biofab-id',
+                                        header: 'Identifier',
+                                        sortable: true,
+                                        width: 125,
+                                        editable: false
+                                    },
+                                    {
+                                        xtype: 'gridcolumn',
+                                        dataIndex: 'name',
+                                        header: 'Name',
+                                        sortable: true,
+                                        width: 125,
+                                        editable: false
+                                    },
+                                    {
+                                        xtype: 'numbercolumn',
+                                        dataIndex: 'strength',
+                                        header: 'Strength',
+                                        sortable: true,
+                                        width: 125,
+                                        align: 'left',
+                                        editable: false,
+                                        format: '0,000'
+                                    },
+                                    {
+                                        xtype: 'numbercolumn',
+                                        dataIndex: 'standard-deviation',
+                                        header: 'Standard Deviation',
+                                        sortable: true,
+                                        width: 125,
+                                        align: 'left',
+                                        editable: false,
+                                        format: '0,000.00'
+                                    },
+                                    {
+                                        xtype: 'gridcolumn',
+                                        dataIndex: 'strain-biofab-id',
+                                        header: 'Strain ID',
+                                        sortable: true,
+                                        width: 125,
+                                        editable: false
+                                    },
+                                    {
+                                        xtype: 'gridcolumn',
+                                        dataIndex: 'plasmid-biofab-id',
+                                        header: 'Plasmid ID',
+                                        sortable: true,
+                                        width: 125,
+                                        editable: false
+                                    },
+                                    {
+                                        xtype: 'gridcolumn',
+                                        dataIndex: 'cds-biofab-id',
+                                        header: 'CDS ID',
+                                        sortable: true,
+                                        width: 125,
+                                        editable: false
+                                    }
+                                ]
                             },
                             {
                                 xtype: 'gridpanel',
@@ -480,7 +543,7 @@ Ext.define('ElectronicDatasheetViewport', {
         if(id === 1)
         {   
             Ext.ComponentManager.get('randomPromoterGridPanel').hide();
-            Ext.ComponentManager.get('translationInitiationElementGridPanel').hide();
+            Ext.ComponentManager.get('tieGridPanel').hide();
             Ext.ComponentManager.get('terminatorGridPanel').hide();
             Ext.ComponentManager.get('promoterGridPanel').show();
             
@@ -497,7 +560,7 @@ Ext.define('ElectronicDatasheetViewport', {
 
         if(id === 2){
             Ext.ComponentManager.get('promoterGridPanel').hide();
-            Ext.ComponentManager.get('translationInitiationElementGridPanel').hide();
+            Ext.ComponentManager.get('tieGridPanel').hide();
             Ext.ComponentManager.get('terminatorGridPanel').hide();
             Ext.ComponentManager.get('randomPromoterGridPanel').show();
 
@@ -518,14 +581,14 @@ Ext.define('ElectronicDatasheetViewport', {
             Ext.ComponentManager.get('promoterGridPanel').hide();
             Ext.ComponentManager.get('randomPromoterGridPanel').hide();
             Ext.ComponentManager.get('terminatorGridPanel').hide();
-            Ext.ComponentManager.get('translationInitiationElementGridPanel').show();
+            Ext.ComponentManager.get('tieGridPanel').show();
         }
 
         if(id === 4)
         {
             Ext.ComponentManager.get('promoterGridPanel').hide();
             Ext.ComponentManager.get('randomPromoterGridPanel').hide();
-            Ext.ComponentManager.get('translationInitiationElementGridPanel').hide();
+            Ext.ComponentManager.get('tieGridPanel').hide();
             Ext.ComponentManager.get('terminatorGridPanel').show();
         }
         

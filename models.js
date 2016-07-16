@@ -35,6 +35,22 @@ Ext.define('Promoter', {
     ]
 });
 
+Ext.define('TranslationInitiationElement', {
+    extend: 'Ext.data.Model',
+    fields: [
+        {name: 'db-id', type: 'int'},
+        {name: 'biofab-id', type: 'string'},
+        {name: 'name', type: 'string'},
+        {name: 'dna-sequence', type: 'string'},
+        {name: 'strength',type: 'float'},
+        {name: 'standard-deviation', type: 'float'},
+        {name: 'strain-biofab-id', type: 'string'},
+        {name: 'plasmid-biofab-id', type: 'string'},
+        {name: 'cds-biofab-id', type: 'string'},
+        {name: 'cds-name', type: 'string'}
+    ]
+});
+
 Ext.define('Terminator', {
     extend: 'Ext.data.Model',
     fields: [

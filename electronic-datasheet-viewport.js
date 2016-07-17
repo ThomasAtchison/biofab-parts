@@ -344,6 +344,16 @@ Ext.define('ElectronicDatasheetViewport', {
         
         this.partsToolbarText = Ext.ComponentManager.get('partsToolbarText');
         this.infoTabPanel = Ext.ComponentManager.get('infoTabPanel');
+
+        // var datasheet = Ext.ComponentManager.get('modularPromoterLibraryDatasheet');
+            
+        // if(datasheet === undefined)
+        // {
+        //     datasheet = new ModularPromoterLibraryDatasheet();
+        //     this.infoTabPanel.add(datasheet);
+        // }
+        
+        // datasheet.displayInformation(record, store);
         
         // libraryGridSelectionModel.select(0);
     },

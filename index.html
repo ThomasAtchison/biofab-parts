@@ -1,36 +1,84 @@
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>BIOFAB Parts</title>
-        <link rel="stylesheet" type="text/css" href="lib/ext-4.0.2a/resources/css/ext-all-gray.css"/>
-        <link rel="stylesheet" type="text/css" href="lib/ext-4.0.2a/ext3-compat.css"/>
-        <script type="text/javascript" src="lib/ext-4.0.2a/ext-all-debug.js"></script>
-        
-        <!-- Ext 3.x compatibility -->
-        <script type="text/javascript" src="lib/ext-4.0.2a/ext3-core-compat.js"></script>
-        <script type="text/javascript" src="lib/ext-4.0.2a/ext3-compat.js"></script>
-        
-        <script type="text/javascript">
-            var WEB_SERVICE_BASE_URL = 'data/';
-        </script>
-        <script type="text/javascript" src="models.js"></script>
-        <script type="text/javascript" src="stores.js"></script>
-        <script type="text/javascript" src="views/modular-promoter-library-datasheet.js"></script>
-        <script type="text/javascript" src="views/random-promoter-library-datasheet.js"></script>
-        <script type="text/javascript" src="views/promoter-datasheet-2.js"></script>
-        <script type="text/javascript" src="views/terminator-library-datasheet.js"></script>
-        <script type="text/javascript" src="views/genetic-part-datasheet.js"></script>
-        <script type="text/javascript" src="electronic-datasheet-viewport.js"></script>
-        <script type="text/javascript">
-            Ext.onReady(function() {
-                Ext.QuickTips.init();
-                var viewport = new ElectronicDatasheetViewport({
-                    renderTo: Ext.getBody()
-                });
-                viewport.show();
-            });
-        </script>
-    </head>
-    <body>
-    </body>
+<!doctype html>
+<html ng-app="BiofabParts">
+  <head>
+    <title>BIOFAB Parts</title>
+    <script src="lib/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
+    <script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc.5/angular-material.js"></script>
+    <script src="controllers.js"></script>
+    <script src="data/libraries.js"></script>
+    <link rel="stylesheet" href="css/angular-material.css">
+    <link rel="stylesheet" href="css/biofab-parts.css">
+  </head>
+  <body>
+    <md-toolbar class="md-theme-indigo" layout="row">
+      <md-button 
+        ng-controller="LibrariesPanelController" 
+        ng-click="toggle()" 
+        class="md-icon-button" 
+        aria-label="Toggle Libraries Panel"
+        style="margin:auto;">
+          <md-icon md-svg-icon="res/menu.svg"></md-icon>
+      </md-button>
+      <div flex="33"></div>
+      <div flex="33">
+        <h2 class="md-toolbar-tools" style="text-align:center">BIOFAB Parts</h2>
+      </div>
+      <div flex="33"></div>
+    </md-toolbar>
+    <md-content style="height:100%" ng-cloak>
+      <md-sidenav class="md-sidenav-left" md-component-id="librariesPanel" md-disable-backdrop md-whiteframe="4">
+        <md-toolbar class="md-theme-indigo" layout="column">
+          <h2 class="md-toolbar-tools">Libraries</h2>
+        </md-toolbar>
+        <md-content ng-controller="LibrariesPanelController" layout-padding layout="column">
+          <div ng-cloak layout-gt-sm="row" layout="column">
+            <div flex-gt-sm="50" flex>
+              <md-content>
+                <md-list flex>
+                  <!--<md-list-item class="md-3-line" ng-repeat="library in libraries" ng-click="showAlert($event, $mdDialog`)">-->
+                  <md-list-item class="md-3-line" ng-repeat="library in libraries" ng-click=null>
+                    <div class="md-list-item-text" layout="column">
+                      <h4>{{ library.name }}</h4>
+                      <p>Version: {{ library.version }}</p>
+                      <p>Released On: {{ library.releaseDate }}</p>
+                    </div>
+                  </md-list-item>
+              </md-content>
+            </div>
+            </div>
+        </md-content>
+      </md-sidenav>
+      <div ng-controller="TabController" class="sample" layout="column" ng-cloak>
+        <md-content class="md-padding">
+          <md-tabs md-selected="selectedIndex" md-autoselect>
+            <md-tab ng-repeat="tab in tabs" ng-disabled="tab.disabled" label="{{tab.title}}" layout="row">
+              <div class="demo-tab tab{{$index%4}} datasheet">
+                <div>{{ fetchContent(tab) }}</div>
+              </div>
+            </md-tab>
+          </md-tabs>
+        </md-content>
+      </div>
+    </md-content>
+    <!--<div style="visibility: hidden">
+    <div class="md-dialog-container" id="myDialog">
+      <md-dialog layout-padding>
+        <h2>Pre-Rendered Dialog</h2>
+        <p>
+          This is a pre-rendered dialog, which means that <code>$mdDialog</code> doesn't compile its
+          template on each opening.
+          <br/><br/>
+          The Dialog Element is a static element in the DOM, which is just visually hidden.<br/>
+          Once the dialog opens, we just fetch the element from the DOM into our dialog and upon close
+          we restore the element back into its old DOM position.
+        </p>
+      </md-dialog>
+    </div>
+  </div>-->
+  </body>
 </html>

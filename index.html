@@ -10,7 +10,9 @@
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
     <script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc.5/angular-material.js"></script>
     <script src="controllers.js"></script>
-    <link rel="stylesheet" href="angular-material.css">
+    <script src="data/libraries.js"></script>
+    <link rel="stylesheet" href="css/angular-material.css">
+    <link rel="stylesheet" href="css/biofab-parts.css">
   </head>
   <body>
     <md-toolbar class="md-theme-indigo" layout="row">
@@ -28,43 +30,55 @@
       </div>
       <div flex="33"></div>
     </md-toolbar>
-    <md-content ng-controller="AppCtrl" style="height:100%" ng-cloak>
+    <md-content style="height:100%" ng-cloak>
       <md-sidenav class="md-sidenav-left" md-component-id="librariesPanel" md-disable-backdrop md-whiteframe="4">
         <md-toolbar class="md-theme-indigo" layout="column">
           <h2 class="md-toolbar-tools">Libraries</h2>
         </md-toolbar>
-        <md-content layout-padding layout="column">
-              <md-list>
-      <md-list-item class="md-3-line" ng-repeat="item in messages">
-        <div class="md-list-item-text">
-          <h3>{{item.what}}</h3>
-          <h4>{{item.who}}</h4>
-          <p>{{item.notes}}</p>
-        </div>
-        <md-button class="md-secondary">Respond</md-button>
-        <md-divider ng-if="!$last"></md-divider>
-      </md-list-item>
-    </md-list>
-  </md-content>
-  <md-toolbar class="md-theme-light">
-    <h2 class="md-toolbar-tools">
-      <span>Parts in the Library</span>
-    </h2>
-  </md-toolbar>
-  <md-content>
-    <md-list>
-      <md-list-item class="md-3-line" ng-repeat="item in messages">
-        <img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}">
-        <div class="md-list-item-text">
-          <h3>{{item.what}}</h3>
-          <h4>{{item.who}}</h4>
-          <p>{{item.notes}}</p>
-        </div>
-        <md-divider md-inset ng-if="!$last"></md-divider>
-      </md-list-item>
-    </md-list>
+        <md-content ng-controller="LibrariesPanelController" layout-padding layout="column">
+          <div ng-cloak layout-gt-sm="row" layout="column">
+            <div flex-gt-sm="50" flex>
+              <md-content>
+                <md-list flex>
+                  <!--<md-list-item class="md-3-line" ng-repeat="library in libraries" ng-click="showAlert($event, $mdDialog`)">-->
+                  <md-list-item class="md-3-line" ng-repeat="library in libraries" ng-click=null>
+                    <div class="md-list-item-text" layout="column">
+                      <h4>{{ library.name }}</h4>
+                      <p>Version: {{ library.version }}</p>
+                      <p>Released On: {{ library.releaseDate }}</p>
+                    </div>
+                  </md-list-item>
+              </md-content>
+            </div>
+            </div>
         </md-content>
       </md-sidenav>
+      <div ng-controller="TabController" class="sample" layout="column" ng-cloak>
+        <md-content class="md-padding">
+          <md-tabs md-selected="selectedIndex" md-autoselect>
+            <md-tab ng-repeat="tab in tabs" ng-disabled="tab.disabled" label="{{tab.title}}" layout="row">
+              <div class="demo-tab tab{{$index%4}} datasheet">
+                <div>{{ fetchContent(tab) }}</div>
+              </div>
+            </md-tab>
+          </md-tabs>
+        </md-content>
+      </div>
     </md-content>
+    <!--<div style="visibility: hidden">
+    <div class="md-dialog-container" id="myDialog">
+      <md-dialog layout-padding>
+        <h2>Pre-Rendered Dialog</h2>
+        <p>
+          This is a pre-rendered dialog, which means that <code>$mdDialog</code> doesn't compile its
+          template on each opening.
+          <br/><br/>
+          The Dialog Element is a static element in the DOM, which is just visually hidden.<br/>
+          Once the dialog opens, we just fetch the element from the DOM into our dialog and upon close
+          we restore the element back into its old DOM position.
+        </p>
+      </md-dialog>
+    </div>
+  </div>-->
   </body>
 </html>

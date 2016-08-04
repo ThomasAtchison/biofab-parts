@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="css/angular-material.css">
     <link rel="stylesheet" href="css/biofab-parts.css">
   </head>
-  <body>
-    <md-toolbar class="md-theme-indigo" layout="row">
+  <body layout="column">
+    <md-content class="md-theme-indigo" layout="row">
       <md-button 
         ng-controller="LibrariesPanelController" 
         ng-click="toggle()" 
@@ -29,7 +29,7 @@
         <h2 class="md-toolbar-tools" style="text-align:center">BIOFAB Parts</h2>
       </div>
       <div flex="33"></div>
-    </md-toolbar>
+    </md-content>
     <md-content style="height:100%" ng-cloak>
       <md-sidenav class="md-sidenav-left" md-component-id="librariesPanel" md-disable-backdrop md-whiteframe="4">
         <md-toolbar class="md-theme-indigo" layout="column">

@@ -1,8 +1,7 @@
 angular
   .module('BiofabParts', ['ngMaterial'])
   .controller('AppCtrl', function ($scope, $timeout, $mdSidenav, $log) {
-    $scope.toggleLeft = buildDelayedToggler('left');
-    $scope.toggleRight = buildToggler('right');
+    // $scope.toggleRight = buildToggler('right');
     $scope.isOpenRight = function(){
       return $mdSidenav('right').isOpen();
     };
@@ -26,42 +25,25 @@ angular
      * Build handler to open/close a SideNav; when animation finishes
      * report completion in console
      */
-    function buildDelayedToggler(navID) {
-      return debounce(function() {
-        // Component lookup should always be available since we are not using `ng-if`
-        $mdSidenav(navID)
-          .toggle()
-          .then(function () {
-            $log.debug("toggle " + navID + " is done");
-          });
-      }, 200);
-    }
-    function buildToggler(navID) {
-      return function() {
-        // Component lookup should always be available since we are not using `ng-if`
-        $mdSidenav(navID)
-          .toggle()
-          .then(function () {
-            $log.debug("toggle " + navID + " is done");
-          });
-      }
-    }
+    // function buildDelayedToggler(navID) {
+    //   return debounce(function() {
+    //     // Component lookup should always be available since we are not using `ng-if`
+    //     $mdSidenav(navID)
+    //       .toggle()
+    //       .then(function () {
+    //         $log.debug("toggle " + navID + " is done");
+    //       });
+    //   }, 200);
+    // }
   })
-  .controller('LeftCtrl', function ($scope, $timeout, $mdSidenav, $log) {
-    $scope.close = function () {
+  
+  .controller('LibrariesPanelController', function ($scope, $timeout, $mdSidenav, $log) {
+    $scope.toggle = function() {
       // Component lookup should always be available since we are not using `ng-if`
-      $mdSidenav('left').close()
+      $mdSidenav('librariesPanel')
+        .toggle()
         .then(function () {
-          $log.debug("close LEFT is done");
+          $log.debug("The Libraries Panel was toggled.");
         });
-    };
-  })
-  .controller('RightCtrl', function ($scope, $timeout, $mdSidenav, $log) {
-    $scope.close = function () {
-      // Component lookup should always be available since we are not using `ng-if`
-      $mdSidenav('right').close()
-        .then(function () {
-          $log.debug("close RIGHT is done");
-        });
-    };
+    }
   });

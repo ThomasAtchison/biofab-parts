@@ -15,21 +15,21 @@
     <link rel="stylesheet" href="css/biofab-parts.css">
   </head>
   <body layout="column">
-    <md-content class="md-theme-indigo" layout="row">
-      <md-button 
-        ng-controller="LibrariesPanelController" 
-        ng-click="toggle()" 
-        class="md-icon-button" 
-        aria-label="Toggle Libraries Panel"
-        style="margin:auto;">
+    <md-toolbar>
+			<div class="md-toolbar-tools">
+        <md-button 
+          ng-controller="LibrariesPanelController" 
+          ng-click="toggle()" 
+          class="md-icon-button" 
+          aria-label="Toggle Libraries Panel"
+          style="margin:auto;">
           <md-icon md-svg-icon="res/menu.svg"></md-icon>
-      </md-button>
-      <div flex="33"></div>
-      <div flex="33">
-        <h2 class="md-toolbar-tools" style="text-align:center">BIOFAB Parts</h2>
-      </div>
-      <div flex="33"></div>
-    </md-content>
+        </md-button>
+				<span flex></span>
+        <h2><span>BIOFAB Parts</span></h2>
+				<span flex></span>
+			</div>
+		</md-toolbar>
     <md-content style="height:100%" ng-cloak>
       <md-sidenav class="md-sidenav-left" md-component-id="librariesPanel" md-disable-backdrop md-whiteframe="4">
         <md-toolbar class="md-theme-indigo" layout="column">
@@ -55,7 +55,7 @@
       </md-sidenav>
       <div ng-controller="TabController" class="sample" layout="column" ng-cloak>
         <md-content class="md-padding">
-          <md-tabs md-selected="selectedIndex" md-autoselect>
+          <md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex" md-autoselect>
             <md-tab ng-repeat="tab in tabs" ng-disabled="tab.disabled" label="{{tab.title}}" layout="row">
               <div class="demo-tab tab{{$index%4}} datasheet">
                 <div>{{ fetchContent(tab) }}</div>

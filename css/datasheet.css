@@ -1,0 +1,12 @@
+.datasheet {
+    margin: 0 auto;
+    text-align: left;
+    width: 650px;
+	height:900px;
+    padding: 25px;
+	background: white;
+	box-shadow: 10px 10px 5px #888888;
+	border-style: solid;
+    border-width: 2px;
+	border-color: #D3D3D3;
+}

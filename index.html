@@ -1,101 +1,79 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html ng-app="BiofabParts">
-  <head>
-    <title>BIOFAB Parts</title>
-    <script src="lib/angularjs/1.5.7/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
-    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
-    <script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc.5/angular-material.js"></script>
-    <script src="controllers.js"></script>
-    <script src="data/libraries.js"></script>
-    <link rel="stylesheet" href="css/angular-material.css">
-    <link rel="stylesheet" href="css/datasheet.css">
-  </head>
-  <body layout="column">
-    <md-toolbar>
-			<div class="md-toolbar-tools">
-        <md-button 
-          ng-controller="LibrariesPanelController" 
-          ng-click="toggle()" 
-          class="md-icon-button" 
-          aria-label="Toggle Libraries Panel"
-          style="margin:auto;">
-          <md-icon md-svg-icon="res/menu.svg"></md-icon>
-        </md-button>
-				<span flex></span>
-        <h2><span>BIOFAB Parts</span></h2>
-				<span flex></span>
-			</div>
+	<head>
+		<title>BIOFAB Parts</title>
+      <script src="lib/angular/1.5.7/angular.min.js"></script>
+		  <script src="lib/angular/1.5.7/angular-animate.min.js"></script>
+    	<script src="lib/angular/1.5.7/angular-animate.min.js"></script>
+    	<script src="lib/angular/1.5.7/angular-route.min.js"></script>
+    	<script src="lib/angular/1.5.7/angular-aria.min.js"></script>
+    	<script src="lib/angular/1.5.7/angular-messages.min.js"></script>
+		
+      <script src="lib/angular/material/1.0.9/angular-material.min.js"></script>
+      <link rel="stylesheet" href="lib/angular/material/1.0.9/angular-material.min.css">
+		
+      <script src="lib/svg-assets-cache.js"></script>
+      <script src="lib/ui-bootstrap-tpls-0.10.0.js"></script>
+      <script src="lib/jquery-3.1.0.min.js"></script>
+    	
+      <script src="lib/biofab-parts/biofab-parts.js"></script>     
+    	<link rel="stylesheet" href="lib/biofab-parts/biofab-parts.css">
+	</head>
+	<body layout="column">
+		<md-toolbar style="background-color:#65021A;" >
+			<div class="md-toolbar-tools" layout="row">
+                <h2 flex="80"><span>BIOFAB Parts</span></h2>
+				<p flex="20" class="version"><span>App Version 0.0.2</span></p>
+            </div>
 		</md-toolbar>
-    <md-content style="height:100%" ng-cloak>
-      <md-sidenav class="md-sidenav-left" md-component-id="librariesPanel" md-disable-backdrop md-whiteframe="4">
-        <md-toolbar class="md-theme-indigo" layout="column">
-          <h2 class="md-toolbar-tools">Libraries</h2>
-        </md-toolbar>
-        <md-content ng-controller="LibrariesPanelController" layout-padding layout="column">
-          <div ng-cloak layout-gt-sm="row" layout="column">
-            <div flex-gt-sm="50" flex>
-              <md-content>
-                <md-list flex>
-                  <!--<md-list-item class="md-3-line" ng-repeat="library in libraries" ng-click="showAlert($event, $mdDialog`)">-->
-                  <md-list-item class="md-3-line" ng-repeat="library in libraries" ng-click=null>
-                    <div class="md-list-item-text" layout="column">
-                      <h4>{{ library.name }}</h4>
-                      <p>Version: {{ library.version }}</p>
-                      <p>Released On: {{ library.releaseDate }}</p>
-                    </div>
-                  </md-list-item>
-              </md-content>
-            </div>
-            </div>
-        </md-content>
-      </md-sidenav>
-      <md-content ng-controller="TabController" class="sample" layout="column" ng-cloak>
-          <md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex" md-autoselect>
-            <!--<md-tab label="All Libraries">
-              <md-content ng-controller="LibrariesPanelController" layout-padding layout="column">
-                <div ng-cloak layout-gt-sm="row" layout="column">
-                  <div flex-gt-sm="50" flex>
-                    <md-content>
-                      <md-list flex>
-                        <md-list-item class="md-3-line" ng-repeat="library in libraries" ng-click=null>
-                          <div class="md-list-item-text" layout="column">
-                            <h4>{{ library.name }}</h4>
-                            <p>Version: {{ library.version }}</p>
-                            <p>Released On: {{ library.releaseDate }}</p>
+        <md-content ng-controller="AppController" layout="column" ng-cloak>
+			    <md-tabs md-dynamic-height md-selected="selectedIndex" md-border-bottom md-autoselect>
+            <md-tab label="All Libraries">
+                <md-content class="md-padding">
+                    <md-content class="sheet" layout="column">
+                        <md-toolbar style="background-color:#65021A;" layout="row"> 
+                          <div class="md-toolbar-tools" layout="row">
+                            <div flex="50">
+                                <p>Name</p>
+                            </div>
+                            <div flex="25">
+                                <p>Version</p>
+                            </div>
+                            <div flex="25">
+                                <p>Release Date</p>
+                            </div>
                           </div>
-                        </md-list-item>
-                      </md-list>
+                        </md-toolbar>
+                        <md-list>
+                          <md-list-item class="md-3-line" ng-repeat="library in libraries" ng-click="addTab(library)">
+                              <div class="md-list-item-text" layout="row">
+                                  <div flex="50">
+                                      <p>{{ library.name }}</p>
+                                  </div>
+                                  <div flex="25">
+                                      <p><b>{{ library.version }}</b></p>
+                                  </div>
+                                  <div flex="25">
+                                      <p>{{ library.releaseDate }}</p>
+                                  </div>
+                              </div>
+                          </md-list-item>
+                        </md-list>
                     </md-content>
-                  </div>
-                </div>
-              </md-content>
-            </md-tab>-->
-            <md-tab ng-repeat="tab in tabs" ng-disabled="tab.disabled" label="{{tab.title}}" layout="row">
+                </md-content>
+            </md-tab>
+            <md-tab ng-repeat="tab in tabs" label="{{ tab.library.name }}">
               <md-content class="md-padding">
-                <div class="demo-tab tab{{$index%4}} datasheet">{{ fetchContent(tab) }}</div>
+                <md-content class="sheet">
+                  <div class="sheet-content">
+                    <h2>{{ tab.library.name }}</h2>
+                    <p>{{ tab.library.description }}</p>
+                  </div>    
+                </md-content>
               </md-content>
             </md-tab>
-          </md-tabs>
-      </md-content>
-    </md-content>
-    <!--<div style="visibility: hidden">
-    <div class="md-dialog-container" id="myDialog">
-      <md-dialog layout-padding>
-        <h2>Pre-Rendered Dialog</h2>
-        <p>
-          This is a pre-rendered dialog, which means that <code>$mdDialog</code> doesn't compile its
-          template on each opening.
-          <br/><br/>
-          The Dialog Element is a static element in the DOM, which is just visually hidden.<br/>
-          Once the dialog opens, we just fetch the element from the DOM into our dialog and upon close
-          we restore the element back into its old DOM position.
-        </p>
-      </md-dialog>
-    </div>
-  </div>-->
-  </body>
+      </md-tabs>
+	  </md-content>
+	</body>
 </html>
